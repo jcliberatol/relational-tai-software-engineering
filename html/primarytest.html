@@ -8,16 +8,25 @@ and open the template in the editor.
         <title>Relational TAI</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="../js/Navegadores.js"></script>
-        <link rel="StyleSheet" href="../css/primarytest.css" type="text/css">
+        <link rel="StyleSheet" href="../css/PrimaryTest.css" type="text/css">
     </head>
     <body>
+        <script type="text/javascript">
+            alert('Su navegador es: '+ BrowserDetect.browser + ' ' + BrowserDetect.version);
+        </script>
         <div id="cabecera" class="sombras">
             Examen de Clasificación
+        </div>
+        <div id="cuerpo" class="sombras">
             <script type="text/javascript">
-                alert("HOLLLaaaa");
-            </script>
-            <script type="text/javascript">
-                alert("asdf");
+                var numero1 = Math.round(Math.random()*10);
+                document.write('<br>Pregunta: <br><br>');
+                document.write('<input type="text" id="numeros" value="' + numero1 + '" readonly="readonly" />');
+                document.write(' X ');
+                document.write('<input type="text" id="numeros" value="' + numero1 + '" readonly="readonly" />');
+                document.write(' = ');
+                document.write('<input type="text" id="numeros"/>');
+                document.write('<br><br>Aceptar!!<br><br>');
             </script>
         </div>
     </body>
