@@ -48,12 +48,12 @@ body {
     -moz-border-radius-topright: 1%;
     -moz-border-radius-bottomright: 8%;
     -moz-border-radius-topleft: 8%;
-    -webkit-border-bottom-left-radius: 1em;
-    -webkit-border-top-right-radius: 1em;
-    -webkit-border-bottom-right-radius: 8em;
-    -webkit-border-top-left-radius: 8em;
+    -webkit-border-bottom-left-radius: 0.5em;
+    -webkit-border-top-right-radius: 0.5em;
+    -webkit-border-bottom-right-radius: 3em;
+    -webkit-border-top-left-radius: 3em;
 }
-#numeros{
+.numeros{
     background-color: #999999;
     height: 100%;
     border: 1px solid #999;
