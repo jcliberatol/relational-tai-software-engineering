@@ -12,43 +12,46 @@ página login (aun falta agregar formulario de registro)
     <head>
         <title>Tutor Adaptativo Inteligente</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="loginDesign.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="Login/loginDesign.css" type="text/css" media="screen">
         <script src="modernizr.min.js"></script> <!--No la he usado jaja-->
     </head>
     <body>
         <header>
-            <h1>Test Adaptativo Inteligente</h1>
+             <div class="cuadroTitulo">
+                <h1>Test Adaptativo Inteligente</h1>
+             </div>
         </header>
         
         <div id="Columnas">
-        <section id="login">
-        <!--    <div id="login">  -->
+            
+            <section id="login">
                <h2>Iniciar Sesión</h2>
                <form>
                    <fieldset>
                        <label for="name">Usuario:</label>
-                       <input type="text" id="name" placeholder="Ingrese su usuario"/>
+                       <input type="text" id="nombreInicio" placeholder="Ingrese su usuario"/>
                        
                        <label for="name">Contraseña:</label>
-                       <input type="password" id="pass" placeholder="Ingrese su contraseña">
+                       <input type="password" id="passInicio" placeholder="Ingrese su contraseña">
                        
-                       <input type="submit" value="Aceptar"/>                         
+                       <!--<a href="PrimeraPagina/html/primarytest.html"><input type="submit" value="Iniciar Sesión"/></a>  -->    
+                       <a href="PrimeraPagina/html/primarytest.html" class="boton">Iniciar Sesión</a>
                    </fieldset>
-               </form> 
-        <!--    </div>  -->         
-        </section>
-        <section id="registro">
+               </form>   
+            </section>
+            
+            <section id="registro">
                 <h2>Registrarse</h2>
                <form>
                    <fieldset>
                        <label for="name">Usuario:</label>
-                       <input type="text" id="name" placeholder="Ingrese su usuario"/>
+                       <input type="text" id="nombreRegistro" placeholder="Ingrese su usuario"/>
                        
                        <label for="name">Contraseña:</label>
-                       <input type="password" id="pass" placeholder="Ingrese su contraseña">
+                       <input type="password" id="passRegistro" placeholder="Ingrese su contraseña">
                        
                        <label for="name">Verifique la contraseña:</label>
-                       <input type="password" id="pass2" placeholder="Repita su contraseña">
+                       <input type="password" id="pass2Registro" placeholder="Repita su contraseña">
                        
                        <label for="name">Rol:</label>
                        <select id="rol">
@@ -56,12 +59,12 @@ página login (aun falta agregar formulario de registro)
                        <option value="2">Profesor</option>
                        </select>
                        
-                       <input type="submit" value="Aceptar"/>                         
+                       <!--input type="submit" value="Registrame"/> -->  
+                       <a href="#" class="boton">Registrame</a>
                    </fieldset>
                </form>          
-        </section>
+            </section>
         </div>
-        <a href="html/primarytest.html">pagina1</a>
-
+        
     </body>
 </html>
