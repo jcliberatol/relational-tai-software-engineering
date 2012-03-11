@@ -1,0 +1,184 @@
+/* 
+    Document   : LoginDesign
+    Created on : 10-mar-2012, 16:51:23
+    Author     : familia
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+body, div, h1, form, fieldset, input, textarea {
+	margin: 0; padding: 0; border: 0; outline: none;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+        background: #e5efd1; /*color fondo*/   
+	font-family: sans-serif;
+}
+
+.cuadroTitulo {
+        min-width: 1000px; max-width: 1000px; height:190px;
+        margin: auto; padding: 23px 5px;
+        
+        background-image: url(imagenes/cuadroTitulo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+}
+
+#Columnas {
+        height: auto; min-width: 960px; max-width: 960px;
+        margin: 40px auto 60px auto;
+        
+        /*definición de columnas*/
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        -o-column-count: 2;
+        
+          /*Espacio entre columnas*/
+        column-gap: normal; /*1em;*/
+        -webkit-column-gap: auto; /*1em;*/
+        -moz-column-gap: 1em;/* 2em;*/
+        -o-column-gap: auto; /*1em;*/
+        
+         /*Agrega una barra solida de color*/
+        column-rule: 2px solid #666;
+        -webkit-column-rule: 2px solid #666;
+        -moz-column-rule: 3px solid #666;
+        -o-column-rule: 2px solid #666;
+        
+}
+
+#login {
+        float:left;  
+        min-height: 300px; height:  300px;
+        min-width: 350px; width: 350px;
+        margin:  10px auto 152px 40px; padding: 35px 25px;
+        
+	background: #bbce91; border: 1px solid #e1e1e1;  /*color cuadro / color linea*/
+	-moz-box-shadow: 0px 0px 10px #444; /*sombra cuadro mozilla*/
+	-webkit-box-shadow: 0px 0px 10px #444; /*sombra cuadro en vabegadores webkit*/
+}
+
+#registro {
+        float:left;  
+        min-width: 240px; width: 350px;
+        margin: 10px auto 10px 30px; padding: 35px 25px;
+        
+	background: #bbce91; border: 1px solid #e1e1e1;  /*color cuadro/borde*/
+	-moz-box-shadow: 0px 0px 10px #444; /*sombra cuadro mozilla*/
+	-webkit-box-shadow: 0px 0px 10px #444; /*sombra cuadro en vabegadores webkit*/
+}
+
+h1 {
+        min-width: 820px; width:820px; height:60px;  
+        margin: auto; padding: 8px 75px;
+    
+        /*border: 1px solid #000;  */ /*ayuda a visualizar espacio que ocupa*/
+    
+        font-size: 50px; color: #264a2c; text-align: center;
+        margin: 50px 0 0 0px; 
+        text-transform: uppercase; text-shadow: 0 0 0 #1a261c;
+        
+
+}
+
+h2 {
+	font-size: 30px; color: #273d2b; text-align: center;
+        margin: 0 0 15px 0;
+        text-transform: uppercase; text-shadow: 0px 1px 0px #f2f2f2;  
+}
+
+label {
+	/*float: left;*/
+        width: 400px;
+        margin: 10px 10px 7px 15px; 
+	font-size: 16px; color: #232920; text-align: left;  
+	text-transform: uppercase; text-shadow: 0px 1px 0px #f2f2f2;
+}
+
+input {
+	width: 270px; height: 35px; 
+        margin: 10px 0px 20px 15px; padding: 5px 20px 0px 20px;
+        
+	background: #7d936d;
+        
+	border-radius: 5px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 5px;
+        
+	-moz-box-shadow: 0px 1px 0px #f2f2f2;
+        -webkit-box-shadow: 0px 1px 0px #f2f2f2;
+        
+	font-family: sans-serif; font-size: 16px; color: #f2f2f2; 
+        text-transform: none; text-shadow: 0px -1px 0px #334f71;
+}
+input::-webkit-input-placeholder  {
+    	color: #bcccaf; text-shadow: 0px -1px 0px #3e4e34;
+}
+input:-moz-placeholder {
+	    color: #bcccaf; text-shadow: 0px 1px 0px #3e4e34;
+}
+
+/* CAMBIÉ ESTE OBJETO ""INPUT SUBMIT"" POR UN ENLACE DE CLASE BOTON*/
+/*
+input[type=submit] {
+        float: right;
+	width: 150px; height: 48px; 
+        margin: 15px 25px 0 0; padding: 10px 15px;
+        
+        -moz-box-shadow: 0px 0px 5px #999;
+        -webkit-box-shadow: 0px 0px 5px #999;
+	border: 1px solid #57623d;
+        
+        font-family: sans-serif; font-size: 20px; color: #f2f2f2;
+        text-transform: none; text-shadow: 0px 1px 0px #334f71;
+        
+        cursor: pointer;
+}
+*/
+
+a.boton{
+        float:right; 
+        display: block; width: 150px; height: 30px;
+	padding: 10px 10px; margin: 15px 25px auto;
+	cursor: pointer;
+        
+        background-color: #7d936d; /* old browsers */
+	/*background: -moz-linear-gradient(top, #8DD297 0%, #398525 100%); /* firefox */
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8DD297), color-stop(100%,#398525)); /* webkit */
+        
+        box-shadow: inset 0px 0px 7px #b0bc8f;
+        -moz-box-shadow: inset 0px 0px 7px #b0bc8f;
+	-webkit-box-shadow: inset 0px 0px 5px #b0bc8f;
+	/*border: 1px solid #5ea617;*/
+	border-radius: 5px;
+        
+        font-family: Sans-Serif; font-size: 20px; text-align: center;
+	text-transform: none; text-decoration: none;
+	color: #f2f2f2;
+	text-shadow: 0px 1px 0px #334f71;
+}
+/*
+a {
+    margin: 20px 30px 30px 20px; 
+    font-family: sans-serif; font-size: 30px; color: #5fae24; text-transform: none; text-shadow: 0px -1px 0px #334f71;
+}
+*/
+select {
+    width: 150px; height: 30px; 
+    padding: 0px 0px 0px 20px; margin: 10px 0px 20px 10px;
+    
+    background: #7d936d;
+    
+    font-family: sans-serif; font-size: 16px; text-align: left;
+    text-transform: none;
+    color: #f2f2f2;
+    text-shadow: 0px 1px 0px #334f71;
+}
