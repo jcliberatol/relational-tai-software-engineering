@@ -8,6 +8,7 @@ and open the template in the editor.
         <title>Relational TAI</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="../js/Navegadores.js"></script>
+        <script type="text/javascript" src="../js/PrimaryTest.js"></script>
         <link rel="StyleSheet" href="../css/PrimaryTest.css" type="text/css">
     </head>
     <body>
@@ -18,16 +19,19 @@ and open the template in the editor.
             Examen de Clasificación
         </div>
         <div id="cuerpo" class="sombras">
-            <script type="text/javascript">
-                var numero1 = Math.round(Math.random()*10);
-                document.write('<br>Pregunta: <br><br>');
-                document.write('<input type="text" id="numeros" value="' + numero1 + '" readonly="readonly" />');
-                document.write(' X ');
-                document.write('<input type="text" id="numeros" value="' + numero1 + '" readonly="readonly" />');
-                document.write(' = ');
-                document.write('<input type="text" id="numeros"/>');
-                document.write('<br><br>Aceptar!!<br><br>');
-            </script>
+            <form name="pregunta" onsubmit="validarPregunta(2)">
+                <script type="text/javascript">
+                        var numero1 = generarNumero();
+                        var numero2 = generarNumero();
+                        document.write('<br>Pregunta: <br><br>');
+                        document.write('<input type="text" id="number1" class="numeros" value="' + numero1 + '" readonly="readonly" />');
+                        document.write(' X ');
+                        document.write('<input type="text" id="number2" class="numeros" value="' + numero2 + '" readonly="readonly" />');
+                        document.write(' = ');
+                        document.write('<input type="text" id="response" class="numeros" value=""   onKeyPress="enterPresionado(2, event)" autocomplete="off"/>');
+                        document.write('<br><br><input type="button" name="btnAceptar" onClick="validarPregunta(2)" value=" Aceptar "><br>');
+               </script>
+            </form>
         </div>
     </body>
 </html>
