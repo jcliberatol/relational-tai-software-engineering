@@ -1,0 +1,81 @@
+/* 
+    Document   : LoginDesign
+    Created on : 10-mar-2012, 16:51:23
+    Author     : familia
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+body, div, h1, form, fieldset, input, textarea {
+	margin: 0; padding: 0; border: 0; outline: none;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+        background: #e5efd1; /*color fondo*/
+	font-family: sans-serif;
+}
+
+#login {
+	width: 350px; margin: 80px 20px 30px 20px; padding: 35px 25px;
+	background: #bbce91; border: 1px solid #e1e1e1;  /*color cuadro / color linea*/
+	-moz-box-shadow: 0px 0px 10px #444; /*sombra cuadro contacto en mozilla*/
+	-webkit-box-shadow: 0px 0px 10px #444; /*sombra cuadro contacto en vabegadores webkit*/
+}
+
+#registro {
+        width: 380px; margin: -410px 500px auto; padding: 35px 25px;
+	background: #bbce91; border: 1px solid #e1e1e1;  /*color cuadro / color linea*/
+	-moz-box-shadow: 0px 0px 10px #444; /*sombra cuadro contacto en mozilla*/
+	-webkit-box-shadow: 0px 0px 10px #444; /*sombra cuadro contacto en vabegadores webkit*/
+}
+
+h1 {
+    font-size: 50px; color: #264a2c; text-transform: uppercase;
+    text-align: center; margin: 70px 0 0 0; text-shadow: 0 0 0 #1a261c; /*sombra de texto*/
+}
+
+h2 {
+	font-size: 30px; color: #273d2b; text-transform: uppercase;
+	text-align: center; margin: 0 0 15px 0; text-shadow: 0px 1px 0px #f2f2f2;
+}
+
+label {
+	float: left; margin: 10px 0px 7px 15px; width: 100px;   /*11px 60px 7px 0px;*/
+	text-align: left; font-size: 16px; color: #232920;
+	text-transform: uppercase; text-shadow: 0px 1px 0px #f2f2f2;
+}
+
+input {
+	width: 270px; height: 35px; padding: 5px 20px 0px 20px; margin: 0px 0px 20px 15px;
+	background: #7d936d;
+	border-radius: 5px; -moz-border-radius: 3px; -webkit-border-radius: 5px;
+	-moz-box-shadow: 0px 1px 0px #f2f2f2;-webkit-box-shadow: 0px 1px 0px #f2f2f2;
+	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-transform: none; text-shadow: 0px -1px 0px #334f71;
+}
+	input::-webkit-input-placeholder  {
+    	color: #bcccaf; text-shadow: 0px -1px 0px #3e4e34;
+	}
+	input:-moz-placeholder {
+	    color: #bcccaf; text-shadow: 0px 1px 0px #3e4e34;
+	}
+
+input[type=submit] {
+	width: 150px; height: 48px; float: right; padding: 10px 15px; margin: 15px 25px 0 0;
+        font-family: sans-serif; font-size: 20px; color: #f2f2f2; text-transform: none; text-shadow: 0px 1px 0px #334f71;
+	-moz-box-shadow: 0px 0px 5px #999;-webkit-box-shadow: 0px 0px 5px #999;
+	border: 1px solid #57623d;
+	cursor: pointer;
+        
+}
+
+a {
+    margin: 20px 30px 30px 50px; 
+    font-family: sans-serif; font-size: 30px; color: #5fae24; text-transform: none; text-shadow: 0px -1px 0px #334f71;
+}
