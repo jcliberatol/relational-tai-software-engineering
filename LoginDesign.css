@@ -19,18 +19,41 @@ html {
 
 body {
         background: #e5efd1; /*color fondo*/
+         
 	font-family: sans-serif;
 }
 
+#Columnas {
+        /*altura*/
+        height: 500px;
+        /*márgenes*/
+        margin: 10px 10px 10px 10px;
+        /*definición de columnas*/
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        -o-column-count: 2;
+          /*Espacio entre columnas*/
+        column-gap: 1em;
+        -webkit-column-gap: 1em;
+        -moz-column-gap: 2em;
+        -o-column-gap: 1em;
+         /*Agrega una barra solida de color*/
+        column-rule: 2px solid #666;
+        -webkit-column-rule: 2px solid #666;
+        -moz-column-rule: 3px solid #666;
+        -o-column-rule: 2px solid #666;
+}
+
 #login {
-	width: 350px; margin: 80px 20px 30px 20px; padding: 35px 25px;
+	width: 350px; margin: 6em auto;/*6em 2em 1em 2em;/*80px 20px 30px 20px;*/ padding: 35px 25px;
 	background: #bbce91; border: 1px solid #e1e1e1;  /*color cuadro / color linea*/
 	-moz-box-shadow: 0px 0px 10px #444; /*sombra cuadro contacto en mozilla*/
 	-webkit-box-shadow: 0px 0px 10px #444; /*sombra cuadro contacto en vabegadores webkit*/
 }
 
 #registro {
-        width: 380px; margin: -410px 500px auto; padding: 35px 25px;
+        width: 380px; margin: 6em auto;/*-25em 2em 1em 60%;/*-410px 500px auto;*/ padding: 35px 25px;
 	background: #bbce91; border: 1px solid #e1e1e1;  /*color cuadro / color linea*/
 	-moz-box-shadow: 0px 0px 10px #444; /*sombra cuadro contacto en mozilla*/
 	-webkit-box-shadow: 0px 0px 10px #444; /*sombra cuadro contacto en vabegadores webkit*/
@@ -49,7 +72,7 @@ h2 {
 label {
 	float: left; margin: 10px 0px 7px 15px; width: 100px;   /*11px 60px 7px 0px;*/
 	text-align: left; font-size: 16px; color: #232920;
-	text-transform: uppercase; text-shadow: 0px 1px 0px #f2f2f2;
+	text-transform: none; /*uppercase;*/ text-shadow: 0px 1px 0px #f2f2f2;
 }
 
 input {
@@ -72,10 +95,10 @@ input[type=submit] {
 	-moz-box-shadow: 0px 0px 5px #999;-webkit-box-shadow: 0px 0px 5px #999;
 	border: 1px solid #57623d;
 	cursor: pointer;
-        
 }
 
 a {
-    margin: 20px 30px 30px 50px; 
+    margin: 20px 30px 30px 20px; 
     font-family: sans-serif; font-size: 30px; color: #5fae24; text-transform: none; text-shadow: 0px -1px 0px #334f71;
 }
+

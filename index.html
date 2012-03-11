@@ -19,9 +19,12 @@ página login (aun falta agregar formulario de registro)
         <header>
             <h1>Test Adaptativo Inteligente</h1>
         </header>
+        
+       
+        <div id="Columnas">
         <section id="login">
         <!--    <div id="login">  -->
-                <h2>Iniciar Sesión</h2>
+               <h2>Iniciar Sesión</h2>
                <form>
                    <fieldset>
                        <label for="name">Usuario:</label>
@@ -48,10 +51,18 @@ página login (aun falta agregar formulario de registro)
                        <label for="name">Verifique la contraseña:</label>
                        <input type="password" id="pass2" placeholder="Repita su contraseña">
                        
+                       <label for="name">Rol:</label>
+                       <select id="rol">
+                       <option value="1">Estudiante</option>
+                       <option value="2">Profesor</option>
+                       </select>
+                       
                        <input type="submit" value="Aceptar"/>                         
                    </fieldset>
                </form>          
         </section>
+        </div>
         <a href="html/primarytest.html">pagina1</a>
+
     </body>
 </html>
