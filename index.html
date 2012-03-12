@@ -5,53 +5,82 @@ and open the template in the editor.
 <!DOCTYPE html>
 
 <!--
-página login (aun falta agregar formulario de registro)
+NOTA:
+Para mejorar compatibilidad con IE<9 consegir librería "html5.js" y añadir a
+la cabecera el siguiente código:
+
+    <script>
+        var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+        "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+        "progress,section,time,video").split(',');
+        for (var i = 0; i < e.length; i++) {
+            document.createElement(e[i]);
+        }
+    </script>
+
+aún no he conseguido la librería
 -->
 
 <html>
     <head>
         <title>Tutor Adaptativo Inteligente</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="Login/loginDesign.css" type="text/css" media="screen">
-        <script src="modernizr.min.js"></script> <!--No la he usado jaja-->
+        
+        <!-- El comentario de abajo mejora compatibilidad con IE-->
+        
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <link rel="stylesheet" href="Login/loginDesign.css" type="text/css" 
+              media="screen">
+        <script type="text/javascript" src="Login/LoginJS.js"></script>
+        
+        <!--Libreria modernizr utilizada en el documento css-->
+        <script src="modernizr.min.js"></script> 
     </head>
-    <body>
+    <body id="cuerpo">
         <header>
-             <div class="cuadroTitulo">
-                <h1>Test Adaptativo Inteligente</h1>
-             </div>
+             <div class="cuadroTitulo"></div>
         </header>
         
-        <div id="Columnas">
-            
-            <section id="login">
-               <h2>Iniciar Sesión</h2>
-               <form>
-                   <fieldset>
+        <div id="layout" name="layout">
+            <section id="login" name="login">
+               
+               <form id="formularioLogin" name="formularioLogin">
+                   <h2>Iniciar Sesión</h2>
+                   <fieldset name="caja">
                        <label for="name">Usuario:</label>
-                       <input type="text" id="nombreInicio" placeholder="Ingrese su usuario"/>
+                       <input type="text" id="nombreInicio" name="usuario" 
+                              placeholder="Ingrese su usuario"/>
                        
                        <label for="name">Contraseña:</label>
-                       <input type="password" id="passInicio" placeholder="Ingrese su contraseña">
+                       <input type="password" id="passInicio" 
+                              placeholder="Ingrese su contraseña">
                        
-                       <!--<a href="PrimeraPagina/html/primarytest.html"><input type="submit" value="Iniciar Sesión"/></a>  -->    
-                       <a href="PrimeraPagina/html/primarytest.html" class="boton">Iniciar Sesión</a>
+                       <a href="PrimeraPagina/html/primarytest.html" class="boton" 
+                          onBlur="verificarEntrada(this)">
+                          Iniciar Sesión</a>
                    </fieldset>
-               </form>   
+               </form> 
             </section>
             
-            <section id="registro">
-                <h2>Registrarse</h2>
-               <form>
+            <section id="registro" name="registro">
+                
+               <form id="formularioRegistro" name="formularioRegistro">
+                   <h2>Registrarse</h2>
                    <fieldset>
                        <label for="name">Usuario:</label>
-                       <input type="text" id="nombreRegistro" placeholder="Ingrese su usuario"/>
+                       <input type="text" id="nombreRegistro" 
+                              placeholder="Ingrese su usuario"/>
                        
                        <label for="name">Contraseña:</label>
-                       <input type="password" id="passRegistro" placeholder="Ingrese su contraseña">
+                       <input type="password" id="passRegistro" 
+                              placeholder="Ingrese su contraseña">
                        
                        <label for="name">Verifique la contraseña:</label>
-                       <input type="password" id="pass2Registro" placeholder="Repita su contraseña">
+                       <input type="password" id="pass2Registro" 
+                              placeholder="Repita su contraseña">
                        
                        <label for="name">Rol:</label>
                        <select id="rol">
@@ -59,12 +88,12 @@ página login (aun falta agregar formulario de registro)
                        <option value="2">Profesor</option>
                        </select>
                        
-                       <!--input type="submit" value="Registrame"/> -->  
-                       <a href="#" class="boton">Registrame</a>
+                       <a href="#" class="boton" onClick="">Registrame</a>
                    </fieldset>
                </form>          
             </section>
         </div>
-        
+        <!--BOTON USADO EN UNA PRACTICA-->
+        <!--<input type="button" value="Resultado" onClick="validar()">  -->
     </body>
 </html>
