@@ -6,179 +6,215 @@
         Purpose of the stylesheet follows.
 */
 
+/*---------------------------------------------------------*/
+/*codigo para resetear estilos css en todos los navegadores*/
+/*-fija estandares iniciales iguales para todos los naveg.-*/
+
 root { 
     display: block;
 }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 body, div, h1, form, fieldset, input, textarea {
-	margin: 0; padding: 0; border: 0; outline: none;
+	outline: none;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 
 html {
 	height: 100%;
 }
 
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*---------------------------------------------------------*/
+/*---------------PAGINA LOGIN Y REGISTRO-------------------*/
+/* ------- em = 1÷16 × tamaño deseado en píxeles --------- */
+
 body {
         background: #e5efd1; /*color fondo*/   
+        font-size: 1em;
 	font-family: sans-serif;
+        line-height: 1;
+        /*margin: auto;*/
 }
 
+/*----------Titulo Tutor Adaptativo Inteligente----------*/
 .cuadroTitulo {
-        min-width: 1000px; max-width: 1000px; height:190px;
-        margin: auto; padding: 23px 5px;
+        min-width: 62.5em; max-width: 62.5em; height:11.875em;
+        margin: 1.6em auto auto auto; padding: 1.44em 0.31em;
         
-        background-image: url(imagenes/cuadroTitulo.png);
+        background-image: url(imagenes/Titulo-KristenITC.png);
         background-repeat: no-repeat;
         background-position: center;
-}
-
-#Columnas {
-        height: auto; min-width: 960px; max-width: 960px;
-        margin: 40px auto 60px auto;
-        
-        /*definición de columnas*/
-        column-count: 2;
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
-        -o-column-count: 2;
-        
-          /*Espacio entre columnas*/
-        column-gap: normal; /*1em;*/
-        -webkit-column-gap: auto; /*1em;*/
-        -moz-column-gap: 1em;/* 2em;*/
-        -o-column-gap: auto; /*1em;*/
-        
-         /*Agrega una barra solida de color*/
-        column-rule: 2px solid #666;
-        -webkit-column-rule: 2px solid #666;
-        -moz-column-rule: 3px solid #666;
-        -o-column-rule: 2px solid #666;
+        position: relative;
         
 }
 
-#login {
-        float:left;  
-        min-height: 300px; height:  300px;
-        min-width: 350px; width: 350px;
-        margin:  10px auto 152px 40px; padding: 35px 25px;
+/*Contenedor: contiene la columna "login" y la columna "registro"*/
+#layout { 
+        width: 62.5em; min-width: 62.5em; height: 40em;
+        margin: 0 auto; 
+}
+
+/*--------------Columnas login y registro--------------*/
+#login, #registro
+{
+        background-color: #b3c981;
+        float: left;
+        width: 20em;
+        margin: 3em 1.5em 2em 3em;
+        padding: 2.2em  3em 2em 2em;
+        border-left: 0.06em solid #9bab79;
+        border-top: 0.06em solid #9bab79;
+        border-right: 0.18em solid #859367;
+        border-bottom: 0.18em solid #859367;
+}
+.boxshadow #login, .boxshadow #registro
+{       
+        background-color: #afc779; border: 0.06em solid #e1e1e1;  /*color cuadro / color linea*/
+	-moz-box-shadow: 0em 0em 0.62em #444; /*sombra cuadro mozilla*/
+	-webkit-box-shadow: 0em 0em 0.62em #444; /*sombra cuadro en vabegadores webkit*/
         
-	background: #bbce91; border: 1px solid #e1e1e1;  /*color cuadro / color linea*/
-	-moz-box-shadow: 0px 0px 10px #444; /*sombra cuadro mozilla*/
-	-webkit-box-shadow: 0px 0px 10px #444; /*sombra cuadro en vabegadores webkit*/
+        background: -moz-linear-gradient(top, #cce98b 0%, #8da655 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c0da85), color-stop(100%,#7d944b));
+}    
+.borderradius #login, .boxshadow #registro {
+    	border-radius: 1em;
+        -moz-border-radius: 1em;
+        -webkit-border-radius: 1em;
 }
 
-#registro {
-        float:left;  
-        min-width: 240px; width: 350px;
-        margin: 10px auto 10px 30px; padding: 35px 25px;
+/*-----Estilo letra h2 = títulos de los formularios-----*/
+h2 {	
+        margin: 0 0 0.93em 0.4em;
         
-	background: #bbce91; border: 1px solid #e1e1e1;  /*color cuadro/borde*/
-	-moz-box-shadow: 0px 0px 10px #444; /*sombra cuadro mozilla*/
-	-webkit-box-shadow: 0px 0px 10px #444; /*sombra cuadro en vabegadores webkit*/
+        font-size: 1.8em; color: #273d2b; text-align: center;
+        text-transform: uppercase; font-weight: 600;
+        text-shadow: 0em 0.062em 0em #f2f2f2;  
 }
 
-h1 {
-        min-width: 820px; width:820px; height:60px;  
-        margin: auto; padding: 8px 75px;
-    
-        /*border: 1px solid #000;  */ /*ayuda a visualizar espacio que ocupa*/
-    
-        font-size: 50px; color: #264a2c; text-align: center;
-        margin: 50px 0 0 0px; 
-        text-transform: uppercase; text-shadow: 0 0 0 #1a261c;
-        
-
-}
-
-h2 {
-	font-size: 30px; color: #273d2b; text-align: center;
-        margin: 0 0 15px 0;
-        text-transform: uppercase; text-shadow: 0px 1px 0px #f2f2f2;  
-}
-
+/*-----------definicion de estilo de etiqueta-----------*/
 label {
-	/*float: left;*/
-        width: 400px;
-        margin: 10px 10px 7px 15px; 
-	font-size: 16px; color: #232920; text-align: left;  
-	text-transform: uppercase; text-shadow: 0px 1px 0px #f2f2f2;
+        width: 14.8em;
+        min-width: 14.8em;
+        margin: auto 0.9em;
+        
+	font-size: 1em; color: #232920; text-align: left;  
+        font-family: sans-serif; font-weight: 300;
+        text-transform: uppercase;
+        /*background: #ccc;*/
+}
+.textshadow label {
+        text-shadow: 0em 0.0625em 0em #f2f2f2;
 }
 
+/*------------definicion cuadros de entrada------------*/
 input {
-	width: 270px; height: 35px; 
-        margin: 10px 0px 20px 15px; padding: 5px 20px 0px 20px;
+	width: 16.1em; height: 1.8em; 
+        margin:  0.75em 0em 1.30em 0.9em; 
+        padding: 0.2em 1.2em 0.1em 1em;
         
-	background: #7d936d;
-        
-	border-radius: 5px;
-        -moz-border-radius: 3px;
-        -webkit-border-radius: 5px;
-        
-	-moz-box-shadow: 0px 1px 0px #f2f2f2;
-        -webkit-box-shadow: 0px 1px 0px #f2f2f2;
-        
-	font-family: sans-serif; font-size: 16px; color: #f2f2f2; 
-        text-transform: none; text-shadow: 0px -1px 0px #334f71;
+	background: #566839;
+    
+	font-family: sans-serif; font-size: 1.03em; 
+        color: #f2f2f2; text-transform: none; 
+}
+.borderradius input {
+    	border-radius: 0.43em;
+        -moz-border-radius: 0.43em;
+        -webkit-border-radius: 0.43em;
+}
+.boxshadow input {
+    	-moz-box-shadow: 0em 0.062em 0em #f2f2f2;
+        -webkit-box-shadow: 0em 0.062em 0em #f2f2f2;
+}
+.textshadow input {
+        text-shadow: 0em -0.062em 0em #334f71;
 }
 input::-webkit-input-placeholder  {
-    	color: #bcccaf; text-shadow: 0px -1px 0px #3e4e34;
+    	color: #829462; text-shadow: 0em 0.06em 0em #3e4e34;
 }
 input:-moz-placeholder {
-	    color: #bcccaf; text-shadow: 0px 1px 0px #3e4e34;
+	    color: #829462; text-shadow: 0em 0.06em 0em #3e4e34;
 }
 
-/* CAMBIÉ ESTE OBJETO ""INPUT SUBMIT"" POR UN ENLACE DE CLASE BOTON*/
-/*
-input[type=submit] {
-        float: right;
-	width: 150px; height: 48px; 
-        margin: 15px 25px 0 0; padding: 10px 15px;
+/*-----------------definicion de boton-----------------*/
+a.boton{
+        float:right;
+        display: block; width: 7.5em; height: 1.2em;
+	padding: 0.62em 0.62em 0.62em 0.62em;
+        margin: 1em auto 0.3em 7.2em;
         
-        -moz-box-shadow: 0px 0px 5px #999;
-        -webkit-box-shadow: 0px 0px 5px #999;
-	border: 1px solid #57623d;
-        
-        font-family: sans-serif; font-size: 20px; color: #f2f2f2;
-        text-transform: none; text-shadow: 0px 1px 0px #334f71;
+        font-family: Sans-Serif; font-size: 1.25em; text-align: center;
+	text-transform: none; text-decoration: none;
+	color: #f2f2f2;
         
         cursor: pointer;
 }
-*/
+.no-boxshadow a.boton{
+        background-color: #6a853a;
+        border: 2px solid #526928;
+}
+.boxshadow a.boton{
+    	background: -moz-linear-gradient(top, #a1bd6e 0%, #304214 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a1bd6e), color-stop(100%,#304214)); /* webkit */
+         box-shadow: inset 0em 0em 0.44em #b0bc8f;
+        -moz-box-shadow: inset 0em 0em 0.44em #b0bc8f;
+	-webkit-box-shadow: inset 0em 0em 0.44em #b0bc8f;
+}
+.borderradius a.boton {
+	border-radius: 0.32em;
+        -moz-border-radius: 0.32em;
+        -webkit-border-radius: 0.32em;
+}
+.textshadow a.boton {
+        text-shadow: 0em 0.062em 0em #334f71;
+}
 
-a.boton{
-        float:right; 
-        display: block; width: 150px; height: 30px;
-	padding: 10px 10px; margin: 15px 25px auto;
-	cursor: pointer;
-        
-        background-color: #7d936d; /* old browsers */
-	/*background: -moz-linear-gradient(top, #8DD297 0%, #398525 100%); /* firefox */
-	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8DD297), color-stop(100%,#398525)); /* webkit */
-        
-        box-shadow: inset 0px 0px 7px #b0bc8f;
-        -moz-box-shadow: inset 0px 0px 7px #b0bc8f;
-	-webkit-box-shadow: inset 0px 0px 5px #b0bc8f;
-	/*border: 1px solid #5ea617;*/
-	border-radius: 5px;
-        
-        font-family: Sans-Serif; font-size: 20px; text-align: center;
-	text-transform: none; text-decoration: none;
-	color: #f2f2f2;
-	text-shadow: 0px 1px 0px #334f71;
-}
-/*
-a {
-    margin: 20px 30px 30px 20px; 
-    font-family: sans-serif; font-size: 30px; color: #5fae24; text-transform: none; text-shadow: 0px -1px 0px #334f71;
-}
-*/
+/*-------------definicion de lista seleccion--------------*/
 select {
-    width: 150px; height: 30px; 
-    padding: 0px 0px 0px 20px; margin: 10px 0px 20px 10px;
+    width: 9.37em; height: 1.8em; 
+    padding: 0.2em 0em 0.2em 0.8em; margin: 0.625em 0em 1.25em 0.625em;
     
-    background: #7d936d;
+    background: #566839;
     
-    font-family: sans-serif; font-size: 16px; text-align: left;
+    font-family: sans-serif; font-size: 1em; text-align: left;
     text-transform: none;
     color: #f2f2f2;
-    text-shadow: 0px 1px 0px #334f71;
+    text-shadow: 0em 0.062em 0em #334f71;
 }
