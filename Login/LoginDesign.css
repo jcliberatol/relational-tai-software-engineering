@@ -1,212 +1,281 @@
 /* 
     Document   : LoginDesign
     Created on : 10-mar-2012, 16:51:23
-    Author     : familia
-    Description:
-        Purpose of the stylesheet follows.
+    Purpose of the stylesheet follows.
 */
 
-/*---------------------------------------------------------*/
-/*codigo para resetear estilos css en todos los navegadores*/
-/*-fija estandares iniciales iguales para todos los naveg.-*/
+/*  -------------------------------------------------------------
+  Con @font-face se agregan fuentes de texto externas
+  (que se encuentran en la URL señalada) pero no me sirvió
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*
+@font-face {
+  font-family: "Simonetta";
+  src: url("http://fonts.googleapis.com/css?family=Simonetta");
+}
+*/
+
+/*  -------------------------------------------------------------
+  CSS RESET (se inicializan los estilos de todos los navegadores
+            desde cero)
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 root { 
     display: block;
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
-img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
-details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
-output, ruby, section, summary, time, mark, audio, video {
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+    blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+    img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b,
+    u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+    details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+    output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-}
+    }
 
-body, div, h1, form, fieldset, input, textarea {
+    body, div, h1, form, fieldset, input, textarea {
 	outline: none;
-}
+    }
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
 	display: block;
-}
+    }
 
-html {
+    html {
 	height: 100%;
-}
+    }
 
-ol, ul {
+    ol, ul {
 	list-style: none;
-}
+    }
 
-blockquote, q {
+    blockquote, q {
 	quotes: none;
-}
+    }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+    blockquote:before, blockquote:after,
+    q:before, q:after {
 	content: '';
 	content: none;
-}
+    }
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
 
-/*---------------------------------------------------------*/
-/*---------------PAGINA LOGIN Y REGISTRO-------------------*/
-/* ------- em = 1÷16 × tamaño deseado en píxeles --------- */
-
+/*  -------------------------------------------------------------
+  CUERPO DE LA PAGINA  -  [em = 1÷16 × tamaño deseado en píxeles]
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 body {
-        background: #e5efd1; /*color fondo*/   
-        font-size: 1em;
-	font-family: sans-serif;
-        line-height: 1;
-        /*margin: auto;*/
+    background: #e5efd1;  
+    font-size: 1em;
+    font-family: sans-serif;
+    line-height: 1;
 }
 
-/*----------Titulo Tutor Adaptativo Inteligente----------*/
+/*  -------------------------------------------------------------
+  TITULO "Tutor Adaptativo Inteligente"
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .cuadroTitulo {
-        min-width: 62.5em; max-width: 62.5em; height:11.875em;
-        margin: 1.6em auto auto auto; padding: 1.44em 0.31em;
+    min-width: 62.5em; max-width: 62.5em; height: 11.875em;
+    margin: 1.6em auto auto auto; padding: 1.44em 0.31em;
         
-        background-image: url(imagenes/Titulo-KristenITC.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        position: relative;
+    background-image: url(imagenes/Titulo-KristenITC.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
         
 }
 
-/*Contenedor: contiene la columna "login" y la columna "registro"*/
+/*  -------------------------------------------------------------
+  CONTENEDOR DE LOGIN Y REGISTRO
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #layout { 
-        width: 62.5em; min-width: 62.5em; height: 40em;
-        margin: 0 auto; 
+    width: 62.5em; min-width: 62.5em; height: 40em;
+    margin: 0 auto; 
+    /*forzar un layout en IE 6 y 7*/
+    overflow: hidden;
+    height:   100%;
+    /*background: red; */       
 }
 
-/*--------------Columnas login y registro--------------*/
-#login, #registro
-{
-        background-color: #b3c981;
-        float: left;
-        width: 20em;
-        margin: 3em 1.5em 2em 3em;
-        padding: 2.2em  3em 2em 2em;
-        border-left: 0.06em solid #9bab79;
-        border-top: 0.06em solid #9bab79;
-        border-right: 0.18em solid #859367;
-        border-bottom: 0.18em solid #859367;
+/*  -------------------------------------------------------------
+  COLUMNAS: (login y registro)
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+#login, #registro {
+    background-color: #b3c981;
+    float: left;
+    width: 20em;
+    margin: 3em 1.5em 2em 3em;
+    padding: 2.2em  3em 2em 2em;
+    border-left: 0.06em solid #9bab79;
+    border-top: 0.06em solid #9bab79;
+    border-right: 0.18em solid #859367;
+    border-bottom: 0.18em solid #859367;   
 }
-.boxshadow #login, .boxshadow #registro
-{       
-        background-color: #afc779; border: 0.06em solid #e1e1e1;  /*color cuadro / color linea*/
-	-moz-box-shadow: 0em 0em 0.62em #444; /*sombra cuadro mozilla*/
-	-webkit-box-shadow: 0em 0em 0.62em #444; /*sombra cuadro en vabegadores webkit*/
+    /*  Modernizr: sombras y degradé de "login" y "registro"
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .boxshadow #login, .boxshadow #registro {       
+        background-color: #afc779; border: 0.06em solid #e1e1e1;
+	-moz-box-shadow: 0em 0em 0.62em #444;
+	-webkit-box-shadow: 0em 0em 0.62em #444;
         
-        background: -moz-linear-gradient(top, #cce98b 0%, #8da655 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c0da85), color-stop(100%,#7d944b));
-}    
-.borderradius #login, .boxshadow #registro {
+        background: -moz-linear-gradient(top, #cce98b 0%, #8da655 100%);
+	background: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0%,#c0da85), color-stop(100%,#7d944b));
+    }    
+    /*  Modernizr: bordes redondeados "login" y "registro"
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .borderradius #login, .borderradius #registro {
     	border-radius: 1em;
         -moz-border-radius: 1em;
         -webkit-border-radius: 1em;
-}
+    }
 
-/*-----Estilo letra h2 = títulos de los formularios-----*/
+
+/*  -------------------------------------------------------------
+  LETRA DE "INICIO SESIÓN" Y "REGISTRO"
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 h2 {	
-        margin: 0 0 0.93em 0.4em;
+    margin: 0 0 0.93em 0.4em;
         
-        font-size: 1.8em; color: #273d2b; text-align: center;
-        text-transform: uppercase; font-weight: 600;
-        text-shadow: 0em 0.062em 0em #f2f2f2;  
+    font-size: 1.8em; color: #273d2b; text-align: center;
+    text-transform: uppercase; font-weight: 600;
+    text-shadow: 0em 0.062em 0em #f2f2f2;  
 }
 
-/*-----------definicion de estilo de etiqueta-----------*/
+
+/*  -------------------------------------------------------------
+  ESTILO DE ETIQUETAS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 label {
-        width: 14.8em;
-        min-width: 14.8em;
-        margin: auto 0.9em;
+    width: 14.8em;
+    min-width: 14.8em;
+    margin: auto 0.9em;
         
-	font-size: 1em; color: #232920; text-align: left;  
-        font-family: sans-serif; font-weight: 300;
-        text-transform: uppercase;
-        /*background: #ccc;*/
+    font-size: 1em; color: #232920; text-align: left;  
+    font-family: sans-serif; font-weight: 300;
+    text-transform: uppercase;
+    /*background: #ccc;*/
 }
-.textshadow label {
+    /*  Modernizr: texto sombreado
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .textshadow label {
         text-shadow: 0em 0.0625em 0em #f2f2f2;
-}
+    }
 
-/*------------definicion cuadros de entrada------------*/
+
+/*  -------------------------------------------------------------
+  ESTILO DE CUADROS DE ENTRADA
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 input {
-	width: 16.1em; height: 1.8em; 
-        margin:  0.75em 0em 1.30em 0.9em; 
-        padding: 0.2em 1.2em 0.1em 1em;
+    width: 16.1em; height: 1.8em; 
+    margin:  0.75em 0em 1.30em 0.9em; 
+    padding: 0.2em 1.2em 0.1em 1em;
         
-	background: #566839;
+    background: #566839;
     
-	font-family: sans-serif; font-size: 1.03em; 
-        color: #f2f2f2; text-transform: none; 
+    font-family: sans-serif; font-size: 1.03em; 
+    color: #f2f2f2; text-transform: none; 
 }
-.borderradius input {
+    /*  Modernizr: bordes redondeados
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .borderradius input {
     	border-radius: 0.43em;
         -moz-border-radius: 0.43em;
         -webkit-border-radius: 0.43em;
-}
-.boxshadow input {
+    }
+    /*  Modernizr: sombras de los cuadros
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .boxshadow input {
     	-moz-box-shadow: 0em 0.062em 0em #f2f2f2;
         -webkit-box-shadow: 0em 0.062em 0em #f2f2f2;
-}
-.textshadow input {
+    }
+    /*  Modernizr: texto sombreado
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .textshadow input {
         text-shadow: 0em -0.062em 0em #334f71;
-}
-input::-webkit-input-placeholder  {
+    }
+    /*  Modernizr: estilo de los espacios reservados
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    input::-webkit-input-placeholder  {
     	color: #829462; text-shadow: 0em 0.06em 0em #3e4e34;
-}
-input:-moz-placeholder {
+    }
+    input:-moz-placeholder {
 	    color: #829462; text-shadow: 0em 0.06em 0em #3e4e34;
-}
+    }
 
-/*-----------------definicion de boton-----------------*/
+/*  -------------------------------------------------------------
+  ESTILO DE ENLACES DE CLASE "boton"
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 a.boton{
-        float:right;
-        display: block; width: 7.5em; height: 1.2em;
-	padding: 0.62em 0.62em 0.62em 0.62em;
-        margin: 1em auto 0.3em 7.2em;
+    float:right;
+    display: block; width: 7.5em; height: 1.2em;
+    padding: 0.62em 0.62em 0.62em 0.62em;
+    margin: 1em auto 0.3em 7.2em;
         
-        font-family: Sans-Serif; font-size: 1.25em; text-align: center;
-	text-transform: none; text-decoration: none;
-	color: #f2f2f2;
+    font-family: Sans-Serif; font-size: 1.25em; text-align: center;
+    text-transform: none; text-decoration: none;
+    color: #f2f2f2;
         
-        cursor: pointer;
+    cursor: pointer;
 }
-.no-boxshadow a.boton{
+    /*  Modernizr: en caso de no soportar sombras en las caja
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .no-boxshadow a.boton{
         background-color: #6a853a;
-        border: 2px solid #526928;
-}
-.boxshadow a.boton{
-    	background: -moz-linear-gradient(top, #a1bd6e 0%, #304214 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a1bd6e), color-stop(100%,#304214)); /* webkit */
+        border: 3px solid #526928;
+    }
+    /*  no soporta sombras -> cambia color al pasarle el mouse
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .no-boxshadow a.boton:hover{
+        background-color: #007ba9;
+        border: 3px solid #006287;
+    }
+    /*  Modernizr: sombras en las caja
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */    
+    .boxshadow a.boton{
+    	background: -moz-linear-gradient(top, #a1bd6e 0%, #304214 100%);
+	background: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0%,#a1bd6e), color-stop(100%,#304214));
          box-shadow: inset 0em 0em 0.44em #b0bc8f;
         -moz-box-shadow: inset 0em 0em 0.44em #b0bc8f;
 	-webkit-box-shadow: inset 0em 0em 0.44em #b0bc8f;
-}
-.borderradius a.boton {
+    }
+    /*  Modernizr: cambia el color del boton al pasarle el mouse
+      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        .boxshadow a.boton:hover{
+    	background: -moz-linear-gradient(top, #6fb8d3 0%, #003e55 100%);
+	background: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0%,#6fb8d3), color-stop(100%,#003e55));
+         box-shadow: inset 0em 0em 0.44em #b0bc8f;
+        -moz-box-shadow: inset 0em 0em 0.44em #b0bc8f;
+	-webkit-box-shadow: inset 0em 0em 0.44em #b0bc8f;
+    }
+    /*  Modernizr: bordes redondeados
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */   
+    .borderradius a.boton {
 	border-radius: 0.32em;
         -moz-border-radius: 0.32em;
         -webkit-border-radius: 0.32em;
-}
-.textshadow a.boton {
+    }
+    /*  Modernizr: texto sombreado
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */ 
+    .textshadow a.boton {
         text-shadow: 0em 0.062em 0em #334f71;
-}
+    }
 
-/*-------------definicion de lista seleccion--------------*/
+/*  -------------------------------------------------------------
+  ESTILO DE LA LISTA DE SELECCION
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 select {
     width: 9.37em; height: 1.8em; 
     padding: 0.2em 0em 0.2em 0.8em; margin: 0.625em 0em 1.25em 0.625em;
