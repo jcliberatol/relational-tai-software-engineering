@@ -1,0 +1,78 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+
+<!--  Activa el modo standard de los navegadores -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+    <head>
+        <title>Relational TAI</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <!-- Combo-handled YUI CSS files: reset,base,font,grids --> 
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.9.0/build/reset-fonts-grids/reset-fonts-grids.css&2.9.0/build/base/base-min.css"> 
+        
+        <!-- diseño css "LoginDesign.css"-->   
+        <link rel="stylesheet" href="../css/PrimaryTest.css" type="text/css" media="screen">
+        <script type="text/javascript" src="../js/Navegadores.js"></script>
+        <script type="text/javascript" src="../js/PrimaryTest.js"></script>
+        <!--Libreria modernizr utilizada en el documento css-->
+        <script src="../../Complementos/modernizr.min.js"></script> 
+        
+    </head>
+    
+    <body onLoad="document.getElementById('response').focus();">
+        
+        <article id="cuerpo">
+            
+            <header id="cabecera">
+                <div id="cuadroTitulo"></div>
+            </header>
+            
+            <section id="test">
+                <form id="pregunta">
+                    <h2>Pregunta</br></br></h2>
+                    <script type="text/javascript">
+                        var numero1 = generarNumero();
+                        var numero2 = generarNumero();
+                        document.write('<h4><input type="text" id="number1" size="4" class="numeros" value="' + numero1 + '" readonly="readonly" />');
+                        document.write('  X  ');
+                        document.write('<input type="text" id="number2" size="4" class="numeros" value="' + numero2 + '" readonly="readonly" />');
+                        document.write('  =  ');
+                        document.write('<input type="text" id="response" size="4" class="numeros" value=""   onKeyPress="enterPresionado(2, event)" autocomplete="off"/></h4>');
+                        document.write('<input type="button" class="boton" id="btnAyuda" name="btnAyuda" onClick="" value=" Ayuda ">');
+                        document.write('<input type="button" class="boton" id="btnAceptar" name="btnAceptar" onClick="validarPregunta(2)" value=" Aceptar ">');
+                    </script>
+                </form>
+            </section>
+   
+            <section id="informacion">
+                <h2>Información</h2>
+                <form id="tiempo">
+                    <h3>Tiempo</h3>
+                    <div id="reloj">
+                        <script type="text/javascript">
+                        var hora="01:02";
+                        document.write('<input type="text" id="time" size="4" class="time" value="' + hora + '" readonly="readonly" />');
+                    </script>
+                    </div>
+                </form> 
+                <form id="ayuda">
+                    <h3>Puntaje</h3>
+                    <script type="text/javascript">
+                    var puntaje=" 0 ";
+                    document.write('<input type="text" id="puntaje" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
+                    </script>
+                </form>
+            </section>
+            
+        </article>
+        
+    </body>
+    <footer>
+        <div id="pieDePagina">pie de página</div>
+    </footer>
+</html>
