@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> <!--Cabecera -->
+	<meta charset="utf-8" />
+	<title>Prueba Suma</title>
+
+
+<link rel=StyleSheet href="Css files\Estilo enteros.css" TYPE="text/css" MEDIA=screen>
+
+</head> <!--Fin cabecera -->
+
+<body> <!--Empieza el cuerpo -->
+	
+	<section>
+		<form id="formulario"> <!-- empieza formulario -->
+			<label>Suma</label> <!-- label -->
+			<table> <!-- empieza tabla -->
+				<tr>
+					<td><input type="text" disabled="disabled" maxlength="8" id="numero1"
+					required /></td>
+					<td>+</td>
+					<td><input type="text" disabled="disabled" maxlength="8" id="numero2" 
+					required /></td> 
+					<td>=</td>
+				</tr>
+				<!-- <tr>
+					<td><input type="text" maxlength="8" id="resultado" required>
+					</td> 
+				</tr> -->
+			</table> <!-- termina tabla-->
+		</form>	
+	</section>
+		
+
+	<section>
+		<form id="mibloque">
+				<input type="button" onclick="recogerNumeros1()" id="r1">
+				<input type="button" onclick="recogerNumeros2()" id="r2">
+				<input type="button" onclick="recogerNumeros3()" id="r3">
+				<input type="button" onclick="recogerNumeros4()" id="r4">
+		</form>
+	</section>
+	<script type="text/javascript" src="Javascript files/sumaNaturales.js"></script>
+
+	<section>
+		<form id="formulario"> 
+			<input type="text" name="reloj" value="" size="55" style="border : 0px ; text-align : center"> 
+		</form> 
+	</section>
+
+</body>
+
+</html>
