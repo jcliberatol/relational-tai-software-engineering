@@ -19,6 +19,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="../css/PrimaryTest.css" type="text/css" media="screen">
         <script type="text/javascript" src="../js/Navegadores.js"></script>
         <script type="text/javascript" src="../js/PrimaryTest.js"></script>
+        <script type="text/javascript" src="PaginaPrincipalJS_1.js"></script>
         <!--Libreria modernizr utilizada en el documento css-->
         <script src="../../Complementos/modernizr.min.js"></script> 
         
@@ -34,17 +35,13 @@ and open the template in the editor.
             
             <section id="test">
                 <form id="pregunta">
-                    <h2>Pregunta</br></br></h2>
+                    <h2>Pregunta<br><br></h2>
                     <script type="text/javascript">
-                        var numero1 = generarNumero();
-                        var numero2 = generarNumero();
-                        document.write('<h4><input type="text" id="number1" size="4" class="numeros" value="' + numero1 + '" readonly="readonly" />');
-                        document.write('  X  ');
-                        document.write('<input type="text" id="number2" size="4" class="numeros" value="' + numero2 + '" readonly="readonly" />');
-                        document.write('  =  ');
-                        document.write('<input type="text" id="response" size="4" class="numeros" value=""   onKeyPress="enterPresionado(2, event)" autocomplete="off"/></h4>');
-                        document.write('<input type="button" class="boton" id="btnAyuda" name="btnAyuda" onClick="" value=" Ayuda ">');
+                        document.write('<h4><input type="text" id="question" size="20" class="numeros" value="" readonly="readonly" />');
+                        //document.write('<input type="text" id="response" size="2" class="numeros" value=""   onKeyPress="enterPresionado(2, event)" autocomplete="off"/></h4>');
+                        document.write('</h4><input type="button" class="boton" id="btnAyuda" name="btnAyuda" onClick="" value=" Ayuda ">');
                         document.write('<input type="button" class="boton" id="btnAceptar" name="btnAceptar" onClick="validarPregunta(2)" value=" Aceptar ">');
+                        setearNumeros();
                     </script>
                 </form>
             </section>
@@ -55,15 +52,15 @@ and open the template in the editor.
                     <h3>Tiempo</h3>
                     <div id="reloj">
                         <script type="text/javascript">
-                        var hora="01:02";
-                        document.write('<input type="text" id="time" size="4" class="time" value="' + hora + '" readonly="readonly" />');
-                    </script>
+                            document.write('<input type="text" id="time" size="4" class="time" value="" readonly="readonly" />');
+                            MostrarCrono();
+                        </script>
                     </div>
                 </form> 
                 <form id="ayuda">
                     <h3>Puntaje</h3>
                     <script type="text/javascript">
-                    var puntaje=" 0 ";
+                    var puntaje="0";
                     document.write('<input type="text" id="puntaje" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
                     </script>
                 </form>
