@@ -1,0 +1,116 @@
+body{ /* Cambi el estilo del cuerpo o body*/
+	color: #333300; /*Cambia el color de la letra*/
+	background: #6666FF; /*Cambia el fondo*/
+	font-family: "Helvetica", Arial; /*Tipo Letra*/
+	font-size: 40px; /*Tamaño letra*/
+	text-align: center;/*Alineación*/
+}
+form /*Formulario*/
+{
+
+	background: #9999FF; /*Color*/
+	border-radius: 1em; /*Bordes redondeados*/
+	box-shadow: 0px 5px 5px rgba(0,0,0,0.5); /*sombra*/
+	text-shadow: 5px 5px 5px rgba(0,0,0,0.5); /*sombra texto*/
+	margin: 1em auto; /*margen*/
+	padding: 1em; /*complemento margen*/
+	width: 80%; /*ancho*/
+	
+}
+form input
+{
+	background: #9999FF; /*fondo*/
+	border:none;/*borde*/ 
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);/*sombra caja*/
+	display: block; /*pendiente*/
+	font-size: 100%; /*tamaño ltra*/
+	margin: 0.5em auto; /*margene*/
+	padding: 0.5em; /*complemento*/
+	width: 80%; /*ancho*/
+	text-align: center; /*alineación*/
+	-webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /*Sombra caja*/
+	-moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /*Sombra caja*/
+}
+#numero1 {
+
+text-align: right; /*input1*/
+
+}
+#numero2 {
+
+text-align: left; /*input2*/
+
+}
+/*Color linea*/
+#resultado{ 
+background: #fff    
+}
+
+#mibloque{
+    column-count: 4;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    -o-column-count: 4;
+}
+table  /*tabla*/
+{
+	text-align: center; /*alineacion texto*/
+	align: center; /*alinecion tabla*/
+	margin: 1em auto; /*margen*/
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5); /*sombra*/
+	text-shadow: 5px 5px 5px rgba(0,0,0,0.5); /*sombra*/
+	width = 80px;
+}
+#r1:hover
+{ 
+background-color:yellow;
+}
+
+#r2:hover
+{ 
+background-color:yellow;
+}
+
+#r3:hover
+{ 
+background-color:yellow;
+}
+
+#r4:hover
+{ 
+background-color:yellow;
+}
+
+
+}
+#numero2 {
+
+text-align: left;
+
+}
+
+#resultado{
+background: #fff
+
+}
+table
+{
+	text-align: center;
+	align: center;
+	margin: 1em auto;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+	text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	width = 80px;
+}
+#r1{
+	text-align: center;
+	align: center;
+	color: #333;
+
+}
+#mibloque{
+    column-count: 4;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    -o-column-count: 4;
+}
