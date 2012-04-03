@@ -22,7 +22,10 @@ function MostrarCrono() {
     if(segundos == 10){
         preguntaContador++;
         segundos = 0;
-        document.getElementById("puntaje").value = preguntaContador;
+        document.getElementById('puntaje').value = preguntaContador;
+        crearSetPregunta();
+//        var eleccion = (pregunta[5]+2)%4;
+//        document.getElementById('btn' + eleccion ).click();
         if(pregunta == 10){
             location.href='../../index.html';
         }
@@ -34,7 +37,7 @@ function MostrarCrono() {
 }
 
 function crearSetPregunta(){
-    pregunta =  GenQuestion(10,100,2);
+    pregunta = LevelQuestion(3);
 }
 
 function getPregunta(){
@@ -54,10 +57,14 @@ function validarRespuesta(n){
     if(n == pregunta[5]){
         preguntaContador++;
         preguntasCorrectas++;
+        tiempoTotal = tiempoTotal + segundos;
+        alert("correcto");
         crearSetPregunta();
     }
     else{
+        tiempoTotal = tiempoTotal + segundos;
         preguntaContador++;
+        alert(":(");
         crearSetPregunta();
     }
 }
