@@ -3,22 +3,22 @@ function genRangeNumber(start,finish){
 }
 
 function strCatSum(str2,num){
-	str2= str2 + " + " + num;
+	str2 = str2 + " + " + num;
 	return str2;
 }
 
 function strCatSub(str2,num){
-	str2= str2 + " - " + num;
+	str2 = str2 + " - " + num;
 	return str2;
 }
 
 function strCatMul(str2,num){
-	str2= str2 + " \\times " + num;
+	str2 = str2 + " \\times " + num;
 	return str2;
 }
 
 function strCatDiv(str2,num){
-	str2= str2 + " \\div " + num;
+	str2 = str2 + " \\div " + num;
 	return str2;
 }
 
@@ -33,6 +33,7 @@ function strFinish(str){
 function produceAvailableOperation(validOperations){
 	var num=0;
 	do{num=genRangeNumber(1,4)}while(validOperations[num]==0)
+        return num;
 }
 
 function GenQuestion(startRange,finishRange,Operations,time,validOperations){
@@ -40,9 +41,9 @@ function GenQuestion(startRange,finishRange,Operations,time,validOperations){
  	Operations++;
  	var arr = new Array(Operations);
  	var ope = new Array(Operations-1);
-        
  	for (var i = 0; i < Operations; i++) {
- 			ope[i-1]=produceAvailableOperation(validOperations);
+                if(i!=0){
+                        ope[i-1]=produceAvailableOperation(validOperations);
                         if(ope[i-1]==1){
                             var aux = genRangeNumber(startRange,finishRange);
                             arr[i-1] = aux*arr[i-1];
@@ -69,9 +70,9 @@ function GenQuestion(startRange,finishRange,Operations,time,validOperations){
   		if(ope[i-1]==1){LaTexString=strCatDiv(LaTexString,arr[i]);}
   		if(ope[i-1]==2){LaTexString=strCatMul(LaTexString,arr[i]);}
                 if(ope[i-1]==3){LaTexString=strCatSub(LaTexString,arr[i]);}
-                if(ope[i-1]==4){LaTexString=strCatSum(LaTexString,arr[i]);}  	
+                if(ope[i-1]==4){LaTexString=strCatSum(LaTexString,arr[i]);}
   	}
-  	
+
         LaTexString=strFinish(LaTexString);
   	//compute the result according to operator precedence
   	//first iteration
@@ -110,32 +111,31 @@ function GenQuestion(startRange,finishRange,Operations,time,validOperations){
         output = arr[arr.length - 1];
   	//crear arreglo de numeros de desfase
   	var numDesfase=0;
-    var numDesfase1=0;
+        var numDesfase1=0;
  	var numDesfase2=0;
  	var numDesfase3=0;
 
- 	while(
- 		(numDesfase==numDesfase2)||(numDesfase==numDesfase3)||(numDesfase==numDesfase1)||(numDesfase1==numDesfase2)||(numDesfase1==numDesfase3)||(numDesfase2==numDesfase3)){
+// 	while((numDesfase==numDesfase2)||(numDesfase==numDesfase3)||(numDesfase==numDesfase1)||(numDesfase1==numDesfase2)||(numDesfase1==numDesfase3)||(numDesfase2==numDesfase3)){
 	while(numDesfase==0){
 		numDesfase = Math.round((0-8)*Math.random()+4);
 	}
 	numDesfase = numDesfase*10;
 
-    while(numDesfase1==0){
+        while(numDesfase1==0){
 		numDesfase1 = Math.round((0-8)*Math.random()+4);
 	}
 	numDesfase1 = numDesfase1*10;
 
-	while(xnumDesfase2==0){
+	while(numDesfase2==0){
 		numDesfase2 = Math.round((0-8)*Math.random()+4);
 	}
 		numDesfase2 = numDesfase2*10;
 
-	while(numDesfase3==0){
+        while(numDesfase3==0){
 		numDesfase3 = Math.round((0-8)*Math.random()+4);
 	}
 		numDesfase3 = numDesfase3*10;
-	}
+//	}
 
 	var optionArray = new Array(4);
 
@@ -146,7 +146,6 @@ function GenQuestion(startRange,finishRange,Operations,time,validOperations){
 
 	//poner la respuesta correcta en los numeros de desfase
 	var rightPosition=genRangeNumber(0,3);
-
 	optionArray[rightPosition]=output;
 	var questionArray= new Array(7);
 	questionArray[0]=LaTexString;
@@ -156,52 +155,52 @@ function GenQuestion(startRange,finishRange,Operations,time,validOperations){
 	questionArray[4]=optionArray;
 	questionArray[5]=rightPosition;
 	questionArray[6]=time;
-
 	return questionArray;
  }
 
  function LevelQuestion (level) {
- 	var arr = new array(4);
+ 	var arr = new Array(4);
+
  	switch(level){
  		case 1:
  		arr = [0,0,0,1];
- 		GenQuestion(10,100,1,5,arr);
+ 		return GenQuestion(10,100,1,5,arr);
  		break;
  		case 2:
  		arr = [0,0,1,1];
- 		GenQuestion(10,100,1,5,arr);
+ 		return GenQuestion(10,100,1,5,arr);
  		break;
  		case 3:
  		arr = [0,1,0,0];
- 		GenQuestion(0,100,1,7,arr);
+ 		return GenQuestion(0,100,1,7,arr);
  		break;
  		case 4:
  		arr = [1,0,0,0];
- 		GenQuestion(0,100,1,7,arr);
+ 		return GenQuestion(0,100,1,7,arr);
  		break;
  		case 5:
  		arr = [0,1,1,1];
- 		GenQuestion(0,100,2,7,arr);
+ 		return GenQuestion(0,100,2,7,arr);
  		break;
  		case 6:
  		arr = [1,0,1,1];
- 		GenQuestion(0,100,2,7,arr);
+ 		return GenQuestion(0,100,2,7,arr);
  		break;
  		case 7:
  		arr = [1,1,1,1];
- 		GenQuestion(0,100,2,7,arr);
+ 		return GenQuestion(0,100,2,7,arr);
  		break;
  		case 8:
  		arr = [0,1,0,0];
- 		GenQuestion(100,1000,1,10,arr);
+ 		return GenQuestion(100,1000,1,10,arr);
  		break;
  		case 9:
  		arr = [1,0,0,0];
- 		GenQuestion(10,10000,1,10,arr);
+ 		return GenQuestion(10,10000,1,10,arr);
  		break;
  		default:
  		arr = [0,0,0,1];
- 		GenQuestion(10,100,1,5,arr);
+ 		return GenQuestion(10,100,1,5,arr);
  		break;
 
  	}

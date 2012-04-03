@@ -67,26 +67,24 @@ and open the template in the editor.
                                 document.write(getRespuesta(3));
                                 document.write('</button>');
                                 
-                        setearNumerosEnteros();
-                        
-                        $("#btn1").keypress(function(event) {
-                            if (event.which == 13 ) {
-                                event.preventDefault();
-                            }
-                            if(event.which == 49){
-                                validarRespuesta(0);
-                            }
-                            if(event.which == 50){
-                                validarRespuesta(1);
-                            }
-                            if(event.which == 51){
-                                validarRespuesta(2);
-                            }
-                            if(event.which == 52){
-                                validarRespuesta(3);
-                            }
-                        });
-                    </script>
+                                $("#btn1").keypress(function(event) {
+                                    if (event.which == 13 ) {
+                                        event.preventDefault();
+                                    }
+                                    if(event.which == 49){
+                                        document.getElementById("btn1").click();
+                                    }
+                                    if(event.which == 50){
+                                        document.getElementById("btn2").click();
+                                    }
+                                    if(event.which == 51){
+                                        document.getElementById("btn3").click();
+                                    }
+                                    if(event.which == 52){
+                                        document.getElementById("btn4").click();
+                                    }
+                                });
+                     </script>
                 </form>
             </section>
    
