@@ -30,15 +30,19 @@ function strFinish(str){
 	return str+"}$"
 }
 
-function GenQuestion(startRange,finishRange,Operations,time){
+function produceAvailableOperation(validOperations){
+	var num=0;
+	do{num=genRangeNumber(1,4)}while(validOperations[num]==0)
+}
+
+function GenQuestion(startRange,finishRange,Operations,time,validOperations){
  	//decide the operations and the numbers
  	Operations++;
  	var arr = new Array(Operations);
  	var ope = new Array(Operations-1);
         
  	for (var i = 0; i < Operations; i++) {
- 		if (i!= 0) {
- 			ope[i-1]=genRangeNumber(1,4);
+ 			ope[i-1]=produceAvailableOperation(validOperations);
                         if(ope[i-1]==1){
                             var aux = genRangeNumber(startRange,finishRange);
                             arr[i-1] = aux*arr[i-1];
@@ -157,37 +161,49 @@ function GenQuestion(startRange,finishRange,Operations,time){
  }
 
  function LevelQuestion (level) {
+ 	var arr = new array(4);
  	switch(level){
  		case 1:
- 		GenQuestion(10,100,1,5);
+ 		arr = [0,0,0,1];
+ 		GenQuestion(10,100,1,5,arr);
  		break;
  		case 2:
- 		GenQuestion(10,100,1,5);
+ 		arr = [0,0,1,1];
+ 		GenQuestion(10,100,1,5,arr);
  		break;
  		case 3:
- 		GenQuestion(0,100,1,7);
+ 		arr = [0,1,0,0];
+ 		GenQuestion(0,100,1,7,arr);
  		break;
  		case 4:
- 		GenQuestion(0,100,1,7;
+ 		arr = [1,0,0,0];
+ 		GenQuestion(0,100,1,7,arr);
  		break;
  		case 5:
- 		GenQuestion(0,100,2,7);
+ 		arr = [0,1,1,1];
+ 		GenQuestion(0,100,2,7,arr);
  		break;
  		case 6:
- 		GenQuestion(0,100,2,7);
+ 		arr = [1,0,1,1];
+ 		GenQuestion(0,100,2,7,arr);
  		break;
  		case 7:
- 		GenQuestion(0,100,2,7);
+ 		arr = [1,1,1,1];
+ 		GenQuestion(0,100,2,7,arr);
  		break;
  		case 8:
- 		GenQuestion(100,1000,1,10);
+ 		arr = [0,1,0,0];
+ 		GenQuestion(100,1000,1,10,arr);
  		break;
  		case 9:
- 		GenQuestion(10,10000,1,10);
+ 		arr = [1,0,0,0];
+ 		GenQuestion(10,10000,1,10,arr);
  		break;
  		default:
- 		GenQuestion(10,100,1,5);
+ 		arr = [0,0,0,1];
+ 		GenQuestion(10,100,1,5,arr);
  		break;
 
  	}
  }
+ 
