@@ -23,7 +23,7 @@ function strCatDiv(str2,num){
 }
 
 function strStart(){
-	return "${";
+	return "${\\Huge";
 }
 
 function strFinish(str){
