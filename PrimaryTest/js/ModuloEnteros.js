@@ -30,7 +30,7 @@ function strFinish(str){
 	return str+"}$"
 }
 
-function GenQuestion(startRange,finishRange,Operations){
+function GenQuestion(startRange,finishRange,Operations,time){
  	//decide the operations and the numbers
  	Operations++;
  	var arr = new Array(Operations);
@@ -106,30 +106,32 @@ function GenQuestion(startRange,finishRange,Operations){
         output = arr[arr.length - 1];
   	//crear arreglo de numeros de desfase
   	var numDesfase=0;
-        var numDesfase1=0;
+    var numDesfase1=0;
  	var numDesfase2=0;
  	var numDesfase3=0;
 
-
+ 	while(
+ 		(numDesfase==numDesfase2)||(numDesfase==numDesfase3)||(numDesfase==numDesfase1)||(numDesfase1==numDesfase2)||(numDesfase1==numDesfase3)||(numDesfase2==numDesfase3)){
 	while(numDesfase==0){
 		numDesfase = Math.round((0-8)*Math.random()+4);
 	}
 	numDesfase = numDesfase*10;
 
-        while((numDesfase1==0)||(numDesfase==numDesfase1)){
+    while(numDesfase1==0){
 		numDesfase1 = Math.round((0-8)*Math.random()+4);
 	}
 	numDesfase1 = numDesfase1*10;
 
-	while((numDesfase2==0)||(numDesfase1==numDesfase2)||(numDesfase==numDesfase2)){
+	while(xnumDesfase2==0){
 		numDesfase2 = Math.round((0-8)*Math.random()+4);
 	}
 		numDesfase2 = numDesfase2*10;
 
-	while((numDesfase3==0)||(numDesfase1==numDesfase3)||(numDesfase2==numDesfase3)||(numDesfase==numDesfase3)){
+	while(numDesfase3==0){
 		numDesfase3 = Math.round((0-8)*Math.random()+4);
 	}
 		numDesfase3 = numDesfase3*10;
+	}
 
 	var optionArray = new Array(4);
 
@@ -142,13 +144,50 @@ function GenQuestion(startRange,finishRange,Operations){
 	var rightPosition=genRangeNumber(0,3);
 
 	optionArray[rightPosition]=output;
-	var questionArray= new Array(6);
+	var questionArray= new Array(7);
 	questionArray[0]=LaTexString;
 	questionArray[1]=arrOld;
 	questionArray[2]=opeOld;
 	questionArray[3]=output;
 	questionArray[4]=optionArray;
 	questionArray[5]=rightPosition;
+	questionArray[6]=time;
 
 	return questionArray;
+ }
+
+ function LevelQuestion (level) {
+ 	switch(level){
+ 		case 1:
+ 		GenQuestion(10,100,1,5);
+ 		break;
+ 		case 2:
+ 		GenQuestion(10,100,1,5);
+ 		break;
+ 		case 3:
+ 		GenQuestion(0,100,1,7);
+ 		break;
+ 		case 4:
+ 		GenQuestion(0,100,1,7;
+ 		break;
+ 		case 5:
+ 		GenQuestion(0,100,2,7);
+ 		break;
+ 		case 6:
+ 		GenQuestion(0,100,2,7);
+ 		break;
+ 		case 7:
+ 		GenQuestion(0,100,2,7);
+ 		break;
+ 		case 8:
+ 		GenQuestion(100,1000,1,10);
+ 		break;
+ 		case 9:
+ 		GenQuestion(10,10000,1,10);
+ 		break;
+ 		default:
+ 		GenQuestion(10,100,1,5);
+ 		break;
+
+ 	}
  }
