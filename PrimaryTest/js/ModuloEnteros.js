@@ -113,40 +113,32 @@ function GenQuestion(startRange,finishRange,Operations,time,validOperations){
   	var numDesfase=0;
         var numDesfase1=0;
  	var numDesfase2=0;
- 	var numDesfase3=0;
 
-// 	while((numDesfase==numDesfase2)||(numDesfase==numDesfase3)||(numDesfase==numDesfase1)||(numDesfase1==numDesfase2)||(numDesfase1==numDesfase3)||(numDesfase2==numDesfase3)){
-	while(numDesfase==0){
-		numDesfase = Math.round((0-8)*Math.random()+4);
-	}
-	numDesfase = numDesfase*10;
+ 	while((numDesfase==numDesfase1)||(numDesfase==numDesfase2)||(numDesfase1==numDesfase2)||(numDesfase==0)||(numDesfase1==0)||(numDesfase2==0)){
 
-        while(numDesfase1==0){
-		numDesfase1 = Math.round((0-8)*Math.random()+4);
-	}
-	numDesfase1 = numDesfase1*10;
+            numDesfase = Math.round((0-8)*Math.random()+4);
 
-	while(numDesfase2==0){
-		numDesfase2 = Math.round((0-8)*Math.random()+4);
-	}
-		numDesfase2 = numDesfase2*10;
+            numDesfase = numDesfase*10;
 
-        while(numDesfase3==0){
-		numDesfase3 = Math.round((0-8)*Math.random()+4);
+            numDesfase1 = Math.round((0-8)*Math.random()+4);
+            
+            numDesfase1 = numDesfase1*10;
+
+            numDesfase2 = Math.round((0-8)*Math.random()+4);
+            
+            numDesfase2 = numDesfase2*10;
 	}
-		numDesfase3 = numDesfase3*10;
-//	}
 
 	var optionArray = new Array(4);
-
-	optionArray[0]=(output+numDesfase);
-	optionArray[1]=(output+numDesfase1);
-	optionArray[2]=(output+numDesfase2);
-	optionArray[3]=(output+numDesfase3);
 
 	//poner la respuesta correcta en los numeros de desfase
 	var rightPosition=genRangeNumber(0,3);
 	optionArray[rightPosition]=output;
+        
+        optionArray[(rightPosition + 1)%4]=(output+numDesfase);
+	optionArray[(rightPosition + 2)%4]=(output+numDesfase1);
+	optionArray[(rightPosition + 3)%4]=(output+numDesfase2);
+
 	var questionArray= new Array(7);
 	questionArray[0]=LaTexString;
 	questionArray[1]=arrOld;

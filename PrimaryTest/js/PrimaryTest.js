@@ -23,7 +23,7 @@ function MostrarCrono() {
         preguntaContador++;
         segundos = 0;
         document.getElementById('puntaje').value = preguntaContador;
-        crearSetPregunta();
+//        crearSetPresgunta();
 //        var eleccion = (pregunta[5]+2)%4;
 //        document.getElementById('btn' + eleccion ).click();
         if(pregunta == 10){
@@ -50,7 +50,6 @@ function getRespuesta(n){
 
 function getRespuestaVerdadera(){
     return pregunta[3];
-
 }
 
 function validarRespuesta(n){
@@ -58,17 +57,22 @@ function validarRespuesta(n){
         preguntaContador++;
         preguntasCorrectas++;
         tiempoTotal = tiempoTotal + segundos;
+        document.getElementById('puntaje').value = "NaN";
         alert("correcto");
         crearSetPregunta();
+        setearNumerosEnteros();
     }
     else{
         tiempoTotal = tiempoTotal + segundos;
         preguntaContador++;
         alert(":(");
         crearSetPregunta();
+        setearNumerosEnteros();
     }
 }
 
 function setearNumerosEnteros(){
-    
+    for(var i = 1; i < 5; i++){
+        document.getElementById('btn' + i).value = pregunta[4][i-1];
+    }
 }
