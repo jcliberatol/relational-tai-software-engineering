@@ -18,7 +18,7 @@ and open the template in the editor.
         });
         </script>
         <script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
         </script>
         <title>Relational TAI</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -37,6 +37,12 @@ and open the template in the editor.
         <!--Libreria jquery para el uso de eventos-->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="http://api.jquery.com/scripts/events.js"></script>
+        <script language="javascript" type="text/javascript">
+            function llenarDIV(){
+                var obj = document.getElementById('test');
+                obj.innerHTML = 'Cambio de texto';
+            }
+        </script>
     </head>
     
     <body onLoad="document.getElementById('btn1').focus();">
@@ -47,26 +53,17 @@ and open the template in the editor.
                 <div id="cuadroTitulo"></div>
             </header>
             
-            <section id="test">
+            <div id="test">
                 <form id="pregunta">
                     <h2>Pregunta<br><br></h2>
                         <h4>
                             <script type="text/javascript">
                                 crearSetPregunta();
                                 document.write(getPregunta());
-                                document.write('</h4><button class="boton" id="btn1" onClick="validarRespuesta(0)">');
-                                document.write(getRespuesta(0));
-                                document.write('</button>');
-                                document.write('<button class="boton" id="btn2" onClick="validarRespuesta(1)">');
-                                document.write(getRespuesta(1));
-                                document.write('</button>');
-                                document.write('<button class="boton" id="btn3" onClick="validarRespuesta(2)">');
-                                document.write(getRespuesta(2));
-                                document.write('</button>');
-                                document.write('<button class="boton" id="btn4" onClick="validarRespuesta(3)">');
-                                document.write(getRespuesta(3));
-                                document.write('</button>');
-                                
+                                document.write('</h4><input type="button" class="boton" id="btn1" onClick="validarRespuesta(0)"/>');
+                                document.write('</h4><input type="button" class="boton" id="btn2" onClick="validarRespuesta(1)"/>');
+                                document.write('</h4><input type="button" class="boton" id="btn3" onClick="validarRespuesta(2)"/>');
+                                document.write('</h4><input type="button" class="boton" id="btn4" onClick="validarRespuesta(3)"/>');
                                 $("#btn1").keypress(function(event) {
                                     if (event.which == 13 ) {
                                         event.preventDefault();
@@ -84,9 +81,10 @@ and open the template in the editor.
                                         document.getElementById("btn4").click();
                                     }
                                 });
+                                setearNumerosEnteros();
                      </script>
                 </form>
-            </section>
+            </div>
    
             <section id="informacion">
                 <h3>Información</h3>
