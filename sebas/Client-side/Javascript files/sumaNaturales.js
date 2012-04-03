@@ -1,5 +1,5 @@
 
-	obtenerNivel();
+obtenerNivel();
 
 	function obtenerNivel()
 	{

@@ -9,6 +9,17 @@ and open the template in the editor.
 
 <html>
     <head>
+        <!-- Formateado de Numeros -->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]]
+            }
+        });
+        </script>
+        <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
+        </script>
         <title>Relational TAI</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
@@ -22,10 +33,12 @@ and open the template in the editor.
         <script type="text/javascript" src="PaginaPrincipalJS_1.js"></script>
         <!--Libreria modernizr utilizada en el documento css-->
         <script src="../../Complementos/modernizr.min.js"></script> 
-        
+        <!--Libreria jquery para el uso de eventos-->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="http://api.jquery.com/scripts/events.js"></script>
     </head>
     
-    <body onLoad="document.getElementById('response').focus();">
+    <body onLoad="document.getElementById('btn1').focus();">
         
         <article id="cuerpo">
             
@@ -36,20 +49,47 @@ and open the template in the editor.
             <section id="test">
                 <form id="pregunta">
                     <h2>Pregunta<br><br></h2>
+                        <h4>
+                            <script type="text/javascript">
+                                
+                                document.write(pregunta);
+                            </script>
+
+                        </h4><input type="button" class="boton" id="btn1" name="btn1" onClick="validarPregunta(1)" value="">
+                        <input type="button" class="boton" id="btn2" name="btn2" onClick="validarPregunta(2)" value="">
+                        <input type="button" class="boton" id="btn3" name="btn3" onClick="validarPregunta(3)" value="">
+                        <input type="button" class="boton" id="btn4" name="btn4" onClick="validarPregunta(4)" value="">
+
                     <script type="text/javascript">
-                        document.write('<h4><input type="text" id="question" size="20" class="numeros" value="" readonly="readonly" />');
-                        //document.write('<input type="text" id="response" size="2" class="numeros" value=""   onKeyPress="enterPresionado(2, event)" autocomplete="off"/></h4>');
-                        document.write('</h4><input type="button" class="boton" id="btnAyuda" name="btnAyuda" onClick="" value=" Ayuda ">');
-                        document.write('<input type="button" class="boton" id="btnAceptar" name="btnAceptar" onClick="validarPregunta(2)" value=" Aceptar ">');
-                        setearNumeros();
+                        setearNumerosEnteros();
+                    </script>
+
+                    <script>
+                        $("#btn1").keypress(function(event) {
+                            if ( event.which == 13 ) {
+                                event.preventDefault();
+                            }
+                            if(event.which == 49){
+                                alert("Usted presiono 1");
+                            }
+                            if(event.which == 50){
+                                alert("Usted presiono 2");
+                            }
+                            if(event.which == 51){
+                                alert("Usted presiono 3");
+                            }
+                            if(event.which == 52){
+                                alert("Usted presiono 4");
+                            }
+                        });
                     </script>
                 </form>
             </section>
    
             <section id="informacion">
-                <h2>Información</h2>
+                <h3>Información</h3>
                 <form id="tiempo">
-                    <h3>Tiempo</h3>
+                    <h4>Tiempo</h4>
                     <div id="reloj">
                         <script type="text/javascript">
                             document.write('<input type="text" id="time" size="4" class="time" value="" readonly="readonly" />');
