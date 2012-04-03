@@ -30,6 +30,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="../css/PrimaryTest.css" type="text/css" media="screen">
         <script type="text/javascript" src="../js/Navegadores.js"></script>
         <script type="text/javascript" src="../js/PrimaryTest.js"></script>
+        <script type="text/javascript" src="../js/ModuloEnteros.js"></script>
         <script type="text/javascript" src="PaginaPrincipalJS_1.js"></script>
         <!--Libreria modernizr utilizada en el documento css-->
         <script src="../../Complementos/modernizr.min.js"></script> 
@@ -51,35 +52,38 @@ and open the template in the editor.
                     <h2>Pregunta<br><br></h2>
                         <h4>
                             <script type="text/javascript">
+                                crearSetPregunta();
+                                document.write(getPregunta());
+                                document.write('</h4><button class="boton" id="btn1" onClick="validarRespuesta(0)">');
+                                document.write(getRespuesta(0));
+                                document.write('</button>');
+                                document.write('<button class="boton" id="btn2" onClick="validarRespuesta(1)">');
+                                document.write(getRespuesta(1));
+                                document.write('</button>');
+                                document.write('<button class="boton" id="btn3" onClick="validarRespuesta(2)">');
+                                document.write(getRespuesta(2));
+                                document.write('</button>');
+                                document.write('<button class="boton" id="btn4" onClick="validarRespuesta(3)">');
+                                document.write(getRespuesta(3));
+                                document.write('</button>');
                                 
-                                document.write(pregunta);
-                            </script>
-
-                        </h4><input type="button" class="boton" id="btn1" name="btn1" onClick="validarPregunta(1)" value="">
-                        <input type="button" class="boton" id="btn2" name="btn2" onClick="validarPregunta(2)" value="">
-                        <input type="button" class="boton" id="btn3" name="btn3" onClick="validarPregunta(3)" value="">
-                        <input type="button" class="boton" id="btn4" name="btn4" onClick="validarPregunta(4)" value="">
-
-                    <script type="text/javascript">
                         setearNumerosEnteros();
-                    </script>
-
-                    <script>
+                        
                         $("#btn1").keypress(function(event) {
-                            if ( event.which == 13 ) {
+                            if (event.which == 13 ) {
                                 event.preventDefault();
                             }
                             if(event.which == 49){
-                                alert("Usted presiono 1");
+                                validarRespuesta(0);
                             }
                             if(event.which == 50){
-                                alert("Usted presiono 2");
+                                validarRespuesta(1);
                             }
                             if(event.which == 51){
-                                alert("Usted presiono 3");
+                                validarRespuesta(2);
                             }
                             if(event.which == 52){
-                                alert("Usted presiono 4");
+                                validarRespuesta(3);
                             }
                         });
                     </script>
@@ -89,7 +93,7 @@ and open the template in the editor.
             <section id="informacion">
                 <h3>Información</h3>
                 <form id="tiempo">
-                    <h4>Tiempo</h4>
+                    <h5>Tiempo</h5>
                     <div id="reloj">
                         <script type="text/javascript">
                             document.write('<input type="text" id="time" size="4" class="time" value="" readonly="readonly" />');
@@ -98,7 +102,7 @@ and open the template in the editor.
                     </div>
                 </form> 
                 <form id="ayuda">
-                    <h3>Puntaje</h3>
+                    <h5>Puntaje</h5>
                     <script type="text/javascript">
                     var puntaje="0";
                     document.write('<input type="text" id="puntaje" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');

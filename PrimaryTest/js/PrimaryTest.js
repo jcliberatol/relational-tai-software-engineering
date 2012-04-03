@@ -3,14 +3,16 @@
  * and open the template in the editor.
  */
 var tiempoTotal = 0;
-var pregunta = 0;
+var preguntaContador=0;
 var nivel=3;
+var preguntasCorrectas=0;
 var numero1;
 var numero2;
 var respuesta;
 var CronoID = null;
 var CronoEjecutandose = false;
 var segundos=0;
+var pregunta;
 
 function inicializarEnteros(){
     
@@ -18,12 +20,10 @@ function inicializarEnteros(){
 function MostrarCrono() {
     var ValorCrono = segundos;
     if(segundos == 10){
-        pregunta++;
-        setearNumerosEnteros();
+        preguntaContador++;
         segundos = 0;
-        document.getElementById("puntaje").value = pregunta;
+        document.getElementById("puntaje").value = preguntaContador;
         if(pregunta == 10){
-            alert("Test Terminado!!");
             location.href='../../index.html';
         }
     }
@@ -33,21 +33,35 @@ function MostrarCrono() {
 
 }
 
-function setearNumerosEnteros(){
-    numero1 = Math.round(Math.random()*10) + 1;
-    numero2 = Math.round(Math.random()*10) + 1;
-    repuesta = numero1 * numero2;
-    for(var i =0; i<=3; i++){
-        document.getElementById('btn' + i+1).value = questionArray[3][i];
-    }
-    document.getElementById('btn1').focus();
+function crearSetPregunta(){
+    pregunta =  GenQuestion(10,100,2);
 }
 
-function validarRespuesta(tipo){
-    var validado;
+function getPregunta(){
+    return pregunta[0];
+}
+
+function getRespuesta(n){
+    return pregunta[4][n];
+}
+
+function getRespuestaVerdadera(){
+    return pregunta[3];
+
+}
+
+function validarRespuesta(n){
+    if(n == pregunta[5]){
+        preguntaContador++;
+        preguntasCorrectas++;
+        crearSetPregunta();
+    }
+    else{
+        preguntaContador++;
+        crearSetPregunta();
+    }
+}
+
+function setearNumerosEnteros(){
     
-    setearNumerosEnteros();
-    tiempoTotal = tiempoTotal + segundos;
-    segundos=0;
-    return validado;
 }

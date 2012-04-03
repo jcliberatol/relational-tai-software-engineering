@@ -262,10 +262,9 @@ body {
     /*  Cuadro Ayuda ?
        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */     
 #puntaje {
-    width: 4em;
-    height: 1em;
+    width: 5em;
+    height: 2.3em;
     
-    margin: 0em 0.3em 0.4em 0.3em;
     /*padding: 0em 0.3em 0.1em 0.3em;*/
     
     background-color: transparent;
@@ -273,7 +272,7 @@ body {
 
     text-align: center;
     color: #e90000;
-    font-size: 4em;
+    font-size: 2em;
     font-family: 'Kaushan Script', 'Bubblegum Sans', serif;   
 }  
     .borderradius #help  {
@@ -336,11 +335,20 @@ h3 {
   LETRA DEL OPERADOR Y EL IGUAL
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 h4 {
-    color: #0d1f10;                   
+    color: #0d1f10;
     font-size: 2em;
     font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
 
     /*text-align: center;*/
     text-transform: uppercase;
     text-shadow: 0em 0.062em 0em #f2f2f2; 
+}
+
+h5 {
+    color: #0d1f10;
+    font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
+
+    /*text-align: center;*/
+    text-transform: uppercase;
+    text-shadow: 0em 0.062em 0em #f2f2f2;
 }
