@@ -4,7 +4,7 @@
  */
 var tiempoTotal = 0;
 var preguntaContador=0;
-var nivel=3;
+var nivel=7;
 var preguntasCorrectas=0;
 var numero1;
 var numero2;
@@ -37,7 +37,7 @@ function MostrarCrono() {
 }
 
 function crearSetPregunta(){
-    pregunta = LevelQuestion(3);
+    pregunta = LevelQuestion(nivel);
 }
 
 function getPregunta(){
