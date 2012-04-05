@@ -6,38 +6,33 @@ var tiempoTotal = 0;
 var preguntaContador=0;
 var nivel=7;
 var preguntasCorrectas=0;
-var numero1;
-var numero2;
-var respuesta;
 var CronoID = null;
 var CronoEjecutandose = false;
 var segundos=0;
 var pregunta;
+var tiempo;
 
 function inicializarEnteros(){
     
 }
 function MostrarCrono() {
-    var ValorCrono = segundos;
-    if(segundos == 10){
-        preguntaContador++;
-        segundos = 0;
-        document.getElementById('puntaje').value = preguntaContador;
-//        crearSetPresgunta();
-//        var eleccion = (pregunta[5]+2)%4;
-//        document.getElementById('btn' + eleccion ).click();
-        if(pregunta == 10){
+    if(segundos == tiempo){
+        segundos=0;
+        var eleccion = (pregunta[5]+2)%4;
+        validarRespuesta(eleccion);
+        if(preguntaContador == 10){
             location.href='../../index.html';
         }
     }
-    document.getElementById('time').value = ValorCrono;
-    CronoID = setTimeout("MostrarCrono()", 1000);
+    document.getElementById('time').value = tiempo - segundos;
     segundos++;
-
+    CronoID = setTimeout("MostrarCrono()", 1000);
 }
 
 function crearSetPregunta(){
     pregunta = LevelQuestion(nivel);
+    tiempo = pregunta[6];
+    createCookie("pregunta", pregunta[0], 1);
 }
 
 function getPregunta(){
@@ -57,15 +52,20 @@ function validarRespuesta(n){
         preguntaContador++;
         preguntasCorrectas++;
         tiempoTotal = tiempoTotal + segundos;
-        document.getElementById('puntaje').value = "NaN";
-        alert("correcto");
+        segundos=0;
+        document.getElementById('correctas').value = preguntasCorrectas;
+        document.getElementById('erroneas').value = preguntaContador - preguntasCorrectas;
+        document.getElementById('preguntaContador').value = preguntaContador;
         crearSetPregunta();
         setearNumerosEnteros();
     }
     else{
         tiempoTotal = tiempoTotal + segundos;
+        segundos=0;
         preguntaContador++;
-        alert(":(");
+        document.getElementById('correctas').value = preguntasCorrectas;
+        document.getElementById('erroneas').value = preguntaContador - preguntasCorrectas;
+        document.getElementById('preguntaContador').value = preguntaContador;
         crearSetPregunta();
         setearNumerosEnteros();
     }
@@ -75,4 +75,6 @@ function setearNumerosEnteros(){
     for(var i = 1; i < 5; i++){
         document.getElementById('btn' + i).value = pregunta[4][i-1];
     }
+    if(preguntaContador != 0)
+          document.getElementById('SubHtml').contentDocument.location.reload(true);
 }
