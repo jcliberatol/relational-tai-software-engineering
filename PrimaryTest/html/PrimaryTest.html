@@ -10,16 +10,6 @@ and open the template in the editor.
 <html>
     <head>
         <!-- Formateado de Numeros -->
-        <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            inlineMath: [["$","$"],["\\(","\\)"]]
-            }
-        });
-        </script>
-        <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
-        </script>
         <title>Relational TAI</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
@@ -30,7 +20,8 @@ and open the template in the editor.
         <link rel="stylesheet" href="../css/PrimaryTest.css" type="text/css" media="screen">
         <script type="text/javascript" src="../js/Navegadores.js"></script>
         <script type="text/javascript" src="../js/PrimaryTest.js"></script>
-        <script type="text/javascript" src="../js/ModuloDecimales.js"></script>
+        <script type="text/javascript" src="../js/ModuloEnteros.js"></script>
+        <script type="text/javascript" src="../js/cookiePregunta.js"></script>
         <script type="text/javascript" src="PaginaPrincipalJS_1.js"></script>
         <!--Libreria modernizr utilizada en el documento css-->
         <script src="../../Complementos/modernizr.min.js"></script> 
@@ -57,9 +48,11 @@ and open the template in the editor.
                 <form id="pregunta">
                     <h2>Pregunta<br><br></h2>
                         <h4>
+                            <iframe src="pregunta.html" id="SubHtml" width="500" height="100" scrolling="no" frameborder="0">
+                            </iframe>
                             <script type="text/javascript">
                                 crearSetPregunta();
-                                document.write(getPregunta());
+//                                document.write(getPregunta());
                                 document.write('</h4><input type="button" class="boton" id="btn1" onClick="validarRespuesta(0)"/>');
                                 document.write('</h4><input type="button" class="boton" id="btn2" onClick="validarRespuesta(1)"/>');
                                 document.write('</h4><input type="button" class="boton" id="btn3" onClick="validarRespuesta(2)"/>');
@@ -101,7 +94,9 @@ and open the template in the editor.
                     <h5>Puntaje</h5>
                     <script type="text/javascript">
                     var puntaje="0";
-                    document.write('<input type="text" id="puntaje" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
+                    document.write('<input type="text" id="correctas" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
+                    document.write('<input type="text" id="erroneas" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
+                    document.write('<br><input type="text" id="preguntaContador" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
                     </script>
                 </form>
             </section>

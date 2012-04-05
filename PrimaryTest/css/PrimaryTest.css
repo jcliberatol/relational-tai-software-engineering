@@ -334,10 +334,11 @@ h3 {
 /*  -------------------------------------------------------------
   LETRA DEL OPERADOR Y EL IGUAL
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-h4 {
+h4{
     color: #0d1f10;
     font-size: 2em;
     font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
+    background: transparent;  /*verde vivo*/
 
     /*text-align: center;*/
     text-transform: uppercase;

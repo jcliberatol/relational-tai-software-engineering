@@ -1,0 +1,42 @@
+/* 
+    Document   : PrimaryTest
+    Created on : 19-mar-2012, 17:31:15
+    Author     : familia
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*  -------------------------------------------------------------
+  Se importan fuentes de texto externas
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+@import url('http://fonts.googleapis.com/css?family=Jolly+Lodger');
+@import url('http://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('http://fonts.googleapis.com/css?family=Bubblegum+Sans');
+@import url('http://fonts.googleapis.com/css?family=Germania+One');
+
+/*  -------------------------------------------------------------
+  CUERPO DE LA PAGINA  -  [em = 1÷16 × tamaño deseado en píxeles]
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+body {
+    min-width: 63em;
+    width:100%;
+    height: 100%;
+    
+    margin: auto auto auto auto;
+    padding: 0 0 1em 0;
+    background: transparent;
+    
+    font-size: 1em;
+    font-family: sans-serif;
+}
+h4{
+    color: #0d1f10;
+    font-size: 1em;
+    text-align: left;
+    font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
+    background: transparent;  /*verde vivo*/
+
+    /*text-align: center;*/
+    text-transform: uppercase;
+    text-shadow: 0em 0.062em 0em #f2f2f2;
+}
