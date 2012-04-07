@@ -1,0 +1,776 @@
+/* 
+    Document   : LoginDesign
+    Created on : 10-mar-2012, 16:51:23
+    Purpose of the stylesheet follows.
+*/
+
+/*  -------------------------------------------------------------
+  Se resetea estilos con ayuda de YUI
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+@import url('http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css');
+@import url('http://yui.yahooapis.com/3.2.0/build/cssfonts/fonts-min.css');
+
+/*  -------------------------------------------------------------
+  Se importan fuentes de texto externas
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+@import url('http://fonts.googleapis.com/css?family=Acme');
+@import url('http://fonts.googleapis.com/css?family=Germania+One');
+@import url('http://fonts.googleapis.com/css?family=Concert+One');
+@import url('http://fonts.googleapis.com/css?family=Days+One');
+
+@import url('http://fonts.googleapis.com/css?family=Jolly+Lodger');
+@import url('http://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('http://fonts.googleapis.com/css?family=Bubblegum+Sans');
+
+/*  -------------------------------------------------------------
+  BODY  -  [em = 1÷16 × tamaño deseado en píxeles]
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+body {
+    width:100%;
+    height: max-content;
+    
+    margin: auto;
+    background: url(FondoMorado4.png);
+    background-repeat: repeat;
+    /*background: #c4e4b5;  */
+   
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
+/*  -------------------------------------------------------------
+  HEADER "Tutor Adaptativo Inteligente"
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+header {
+    width: 100%;
+    height: 100%;
+    
+    margin: 0.3em 0em 0.3em 0em;
+    padding: 0;
+    
+    display: table;
+}
+
+    #logo{
+        float: left;
+        width: 9em;
+        height: 9em;
+        
+        background: #020202;
+        filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='#474747', endColorstr='#020202',GradientType=0 ); /* IE6-9 */
+    }
+        #imagenLogo{
+            background: url(TaiLogo2.png);
+            background-size: 8.125em 8.125em;
+            background-repeat: no-repeat;
+            margin: 0.4em 0.4em 0.4em 0.4em;
+            width: 8.125em;
+            height: 8.125em;
+        }
+        /*  Modernizr: bordes redondeados "logo"
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        .borderradius #logo {
+            border-radius: 0em;
+            -webkit-border-radius: 0.3em 0.3em 0.3em 3em;
+            -moz-border-radius: 0.3em 0.3em 0.3em 3em;
+            -o-border-radius: 0.3em 0.3em 0.3em 3em;
+        }
+    #cuadroTitulo {  
+        float: right;
+        width: 41.35em;
+        height: 9em;
+        margin: auto auto auto auto;
+        
+        background: #020202;
+        filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='#474747', endColorstr='#020202',GradientType=0 ); /* IE6-9 */
+    }
+        /*  Modernizr: bordes redondeados "Cuadro titulo"
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        .no-boxshadow #logo, .borderradius #cuadroTitulo {
+            border-radius: 0em;
+            -webkit-border-radius: 0.3em 3em 0.3em 0.3em;
+            -moz-border-radius: 0.3em 3em 0.3em 0.3em;
+            -o-border-radius: 0.3em 3em 0.3em 0.3em;
+        }
+        /*  Modernizr: "si no soporta sombras""
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        .no-boxshadow #logo, .no-boxshadow #cuadroTitulo, footer {   
+            border-left: 0.04em solid #9bab79; 
+            border-top: 0.04em solid #9bab79; 
+            border-right: 0.098em solid #859367; 
+            border-bottom: 0.09em solid #859367; 
+        }
+
+        /*  Modernizr: sombras y degradé de "logo" y "cuadroTitulo"
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        .boxshadow #logo, .boxshadow #cuadroTitulo, footer {       
+            background-color: #afc779;
+            border: 0.06em solid #e1e1e1;
+
+            box-shadow: 0em 0em 0.62em #444;
+            -moz-box-shadow: 0em 0em 0.62em #444;
+            -webkit-box-shadow: 0em 0em 0.62em #444;
+            -o-box-shadow: 0em 0em 0.62em #444;
+
+            background: -moz-linear-gradient(top, #474747 0%, #020202 100%);
+            background: -webkit-gradient(linear, left top, left bottom,
+                color-stop(0%,#474747), color-stop(100%,#020202));
+            background: -o-gradient(linear, left top, left bottom,
+                color-stop(0%,#474747), color-stop(100%,#020202));
+        }    
+
+/*  -------------------------------------------------------------
+  CUERPO CON CONTENEDOR Y PIE DE PAGINA
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+#cuerpo{
+    width: 51em; 
+    margin: 0 auto 0 auto;
+    padding: 0.5em;
+    display:table;
+    /*background: blue;*/
+    font-family: sans-serif;   
+}
+
+/*  -------------------------------------------------------------
+  NAVEGADOR "MENU"
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+#menu
+{
+    width: 100%;
+    margin: 0;
+    padding: 0.3em 0 0 0;
+    list-style: none;  
+    
+    background: #bbd77b;
+    filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='#cce98b', endColorstr='#8da655',GradientType=0 ); /* IE6-9 */
+}
+.boxshadow #menu {
+    background: -moz-linear-gradient(top, #cce98b 0%, #8da655 100%);
+    background: -webkit-gradient(linear, left top, left bottom,
+        color-stop(0%,#cce98b), color-stop(100%,#8da655));
+    background: -o-gradient(linear, left top, left bottom,
+        color-stop(0%,#cce98b), color-stop(100%,#8da655));
+    background: -ms-linear-gradient(#cce98b, #8da655);
+    background: linear-gradient(#cce98b, #8da655);
+    
+    box-shadow: 0em 0em 0.62em #444;
+    -moz-box-shadow: 0em 0em 0.62em #444;
+    -webkit-box-shadow: 0em 0em 0.62em #444;
+    -o-box-shadow: 0em 0em 0.62em #444;
+}
+.borderradius #menu {
+    border-radius: 0em;
+    -webkit-border-radius: 0.8em 0.8em 0.8em 0.8em;
+    -moz-border-radius: 0.8em 0.8em 0.8em 0.8em;
+    -o-border-radius: 0.8em 0.8em 0.8em 0.8em;
+}
+
+    #menu li
+    {
+	float: left;
+	padding: 0em 0em 0.625em 0em;
+	position: relative;
+	line-height: 0;
+    }
+
+    #menu a 
+    {
+	float: left;
+	height: 1.5625em;
+	padding: 0em 1.5625em;
+        left: auto;
+	color: #374022;
+	text-transform: uppercase;
+	font: bold 0.88em/1.94em Arial, Helvetica;
+	text-decoration: none;
+	text-shadow: 0 0.0625em white;
+        text-align: left;
+    }
+
+    #menu li:hover > a
+    {
+	color: black;
+    }
+
+    *html #menu li a:hover /* IE6 */
+    {
+	color: #fafafa;
+    }
+
+    #menu li:hover > ul
+    {
+	display: block;
+    }
+
+        /* Sub-menu */
+        #menu ul
+        {
+            list-style: none;
+            margin: 0;
+            padding: 0;    
+            display: none;
+            position: absolute;
+            top: 2em;
+            left: 0;
+            z-index: 99999;    
+            background: #bbd77b;    
+        }
+        .boxshadow #menu ul {
+            background: -moz-linear-gradient(top, #cce98b 0%, #8da655 100%);
+            background: -webkit-gradient(linear, left top, left bottom,
+                color-stop(0%,#cce98b), color-stop(100%,#8da655));
+            background: -o-gradient(linear, left top, left bottom,
+                color-stop(0%,#cce98b), color-stop(100%,#8da655));
+            background: -ms-linear-gradient(#cce98b, #8da655);
+            background: linear-gradient(#cce98b, #8da655);
+
+            box-shadow: 0em 0em 0.62em #444;
+            -moz-box-shadow: 0em 0em 0.62em #444;
+            -webkit-box-shadow: 0em 0em 0.62em #444;
+            -o-box-shadow: 0em 0em 0.62em #444;
+        }
+        .borderradius #menu ul {
+            border-radius: 0em;
+            -webkit-border-radius: 0.3em 0.3em 0.3em 0.3em;
+            -moz-border-radius: 0.3em 0.3em 0.3em 0.3em;
+            -o-border-radius: 0.3em 0.3em 0.3em 0.3em;
+        }
+        
+            #menu ul ul
+            {
+            top: 0;
+            left: 8.2em;
+            }
+
+        #menu ul li
+        {
+            float: none;
+            margin: 0;
+            padding: 0;
+            display: block;  
+        }
+        .boxshadow #menu ul li{
+            box-shadow: 0em 0.0625em 0em #82994e, 0em 0.0625em 0em #cce98b;
+            -moz-box-shadow: 0em 0.0625em 0em #82994e, 0 0.125em 0 #cce98b;
+            -webkit-box-shadow: 0em 0.0625em 0em  #82994e, 0 0.125em 0 #cce98b;
+            -o-box-shadow: 0em 0.0625em 0em  #82994e, 0 0.125em 0 #cce98b;
+        }
+
+        #menu ul li:last-child
+        {   
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;    
+        }
+
+        #menu ul a
+        {    
+            padding: 0.625em;
+            height: 0.625em;
+            width: 8.125em;
+            height: auto;
+            line-height: 1;
+            display: block;
+            white-space: nowrap;
+            float: none;
+            text-transform: none;
+        }
+
+        *html #menu ul a /* IE6 */
+        {    
+            height: 0.625em;
+        }
+
+        *:first-child+html #menu ul a /* IE7 */
+        {    
+            height: 0.625em;
+        }
+        /*colorsito morado*/
+        #menu ul a:hover
+        {
+            background: #b6b9dc;
+            background: -moz-linear-gradient(top, #b6b9dc 0%, #7a7eb0 100%);
+            background: -webkit-gradient(linear, left top, left bottom,
+                color-stop(0%,#b6b9dc), color-stop(100%,#7a7eb0));
+            background: -o-gradient(linear, left top, left bottom,
+                color-stop(0%,#b6b9dc), color-stop(100%,#7a7eb0));
+            background: -ms-linear-gradient(#cce98b, #7a7eb0);
+            background: linear-gradient(#b6b9dc, #7a7eb0);
+        }
+
+        #menu ul li:first-child > a
+        {
+            -moz-border-radius: 0.3125em 0.3125em 0 0;
+            border-radius: 0.3125em 0.3125em 0 0;
+        }
+
+        #menu ul li:first-child > a:after
+        {
+            content: '';
+            position: absolute;
+            left: 1.875em;
+            top: -0.5em;
+            width: 0;
+            height: 0;
+            border-left: 0.3125em solid transparent;
+            border-right: 0.3125em solid transparent;
+            border-bottom: 0.5em solid #444;
+        }
+
+        #menu ul ul li:first-child a:after
+        {
+            left: -0.5em;
+            top: 0.75em;
+            width: 0;
+            height: 0;
+            border-left: 0;	
+            border-bottom: 0.3125em solid transparent;
+            border-top: 0.3125em solid transparent;
+            border-right: 0.5em solid #444;
+        }
+
+        #menu ul li:first-child a:hover:after
+        {
+            border-bottom-color: #b6b9dc; 
+        }
+
+            #menu ul ul li:first-child a:hover:after
+            {
+                border-right-color: #8387b8;
+                border-bottom-color: transparent; 	
+            }
+
+
+        #menu ul li:last-child > a
+        {
+            -moz-border-radius: 0em 0em 0.3125em 0.3125em;
+            border-radius: 0em 0em 0.3125em 0.3125em;
+        }
+
+        #menu:after 
+        {
+                visibility: hidden;
+                display: block;
+                font-size: 0;
+                content: " ";
+                clear: both;
+                height: 0;
+                margin: 1em auto 1em auto;
+        }
+
+        * html #menu             { zoom: 1; } /* IE6 */
+        *:first-child+html #menu { zoom: 1; } /* IE7 */
+
+
+/*  -------------------------------------------------------------
+  CONTENEDOR DE COLUMNAS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+#contenedorColumnas{
+    width: 100%;
+    height: 100%;
+    display: table;
+    margin: auto;
+    padding:0;
+    filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='darkgray', endColorstr='gray',GradientType=0 ); /* IE6-9 */
+    background: url(FondoMorado5.png);
+}
+    .borderradius #contenedorColumnas{
+        border:white;
+        -webkit-border-radius: 0.7em;
+        
+        -webkit-border-radius-bottomleft: 0.1em;
+        -webkit-border-radius-topright: 0.1em;
+        -webkit-border-radius-bottomright: 1.5em;
+        -webkit-border-radius-topleft: 1.5em;
+        
+        -moz-border-radius-bottomleft: 0.1em;
+        -moz-border-radius-topright: 0.1em;
+        -moz-border-radius-bottomright: 1.5em;
+        -moz-border-radius-topleft: 1.5em;
+    }
+    .boxshadow #contenedorColumnas { 
+        box-shadow: 0em 0em 0.62em #444;
+	-moz-box-shadow: 0em 0em 0.62em #444;
+	-webkit-box-shadow: 0em 0em 0.62em #444;
+        -o-box-shadow: 0em 0em 0.62em #444;
+        
+        
+        background: -moz-linear-gradient(top, rgba(771,771,771,0.8) 0%, rgba(100,100,100,0.8) 100%);
+	background: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0%,rgba(771,771,771,0.8)), color-stop(100%,rgba(100,100,100,0.8)));
+        background: -o-gradient(linear, left top, left bottom,
+            color-stop(0%,rgba(771,771,771,0.8)), color-stop(100%,rgba(100,100,100,0.8)));
+    }
+    .no-boxshadow #contenedorColumnas {
+        background-color: gray;
+        filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='darkgray', endColorstr='black',GradientType=0 ); /* IE6-9 */
+        background: url(FondoMorado5.png);
+        background-repeat: repeat;
+    }
+
+
+/*  -------------------------------------------------------------
+  ESTILO DE TODOS LOS FORMULARIOS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+form {
+    float: left;
+    margin: auto;
+    
+    background-color: #b3c981;
+    filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='#cce98b', endColorstr='#8da655',GradientType=0 ); /* IE6-9 */
+}
+    /*  Modernizr: "si no soporta sombras""
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .no-boxshadow form {       
+        border-left: 0.06em solid #9bab79; 
+        border-top: 0.06em solid #9bab79; 
+        border-right: 0.18em solid #859367; 
+        border-bottom: 0.18em solid #859367; 
+    } 
+    /*  Modernizr: sombras y degradé de "login" y "registro"
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .boxshadow form {       
+        background-color: #afc779;
+        border: 0.06em solid #e1e1e1;
+        
+        box-shadow: 0em 0em 0.62em #444;
+	-moz-box-shadow: 0em 0em 0.62em #444;
+	-webkit-box-shadow: 0em 0em 0.62em #444;
+        -o-box-shadow: 0em 0em 0.62em #444;
+        
+        background: -moz-linear-gradient(top, #cce98b 0%, #8da655 100%);
+	background: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0%,#cce98b), color-stop(100%,#8da655));
+        background: -o-gradient(linear, left top, left bottom,
+            color-stop(0%,#cce98b), color-stop(100%,#8da655));
+    }    
+    /*  Modernizr: bordes redondeados "login" y "registro"
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .borderradius form {
+    	/*border-radius: 1em;*/
+        -moz-border-radius: 1em;
+        -webkit-border-radius: 1em;
+        -o-border-radius: 1em;
+        
+    }
+    table, tr, td {
+        border: 0 solid black;
+    }
+
+/*  -------------------------------------------------------------
+  ESTILO DE ETIQUETAS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+label {
+    width: auto;
+    
+    float:left;
+    clear: left;
+    margin: auto;
+        
+    font-size: 1.4em;
+    font-family: 'Germania One', 'Bubblegum Sans', serif;
+    font-weight: bold;
+    text-align: left;  
+    text-transform: uppercase;
+    color: #0d1f10;   
+    
+    background: transparent;               
+}
+    /*  Modernizr: texto sombreado
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .textshadow label {
+        text-shadow: 0em 0.0625em 0em #f2f2f2;
+    }
+    
+/*  -------------------------------------------------------------
+  ESTILO DE CUADROS DE ENTRADA
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+input {     
+    margin: auto;
+    padding: 0.2em 1.2em 0.1em 0.8em; 
+   
+    font-family: sans-serif;
+    font-size: 1.03em; 
+    text-transform: none; 
+    color: #f2f2f2;
+      
+    background: #566839;
+}
+    /*  Modernizr: bordes redondeados
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .borderradius input, .borderradius #selecNivel {
+    	border-radius: 0.43em;
+        -moz-border-radius: 0.43em;
+        -webkit-border-radius: 0.43em;
+        -o-border-radius: 0.43em;
+    }
+    /*  Modernizr: sombras de los cuadros
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .boxshadow input {
+        box-shadow: 0em 0.062em 0em #f2f2f2;
+       	-moz-box-shadow: 0em 0.062em 0em #f2f2f2;
+        -webkit-box-shadow: 0em 0.062em 0em #f2f2f2;
+        -o-box-shadow: 0em 0.062em 0em #f2f2f2;
+    }
+    /*  Modernizr: texto sombreado
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    .textshadow input {
+        text-shadow: 0em -0.062em 0em #334f71;
+    }
+    /*  Modernizr: estilo de los espacios reservados
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    input:-webkit-input-placeholder  {
+    	color: #829462; text-shadow: 0em 0.06em 0em #3e4e34;
+    }
+    input:-moz-placeholder {
+	    color: #829462; text-shadow: 0em 0.06em 0em #3e4e34;
+    }
+    input:-o-placeholder {
+	    color: #829462; text-shadow: 0em 0.06em 0em #3e4e34;
+    }
+    /* Select
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    select {
+        float: left;
+        position: relative;
+        margin:  0.1em 0em 0.7em 1.1em; 
+        padding: 0.2em 0em 0.1em 0.5em; 
+        
+        background: #566839;
+    
+        font-family: sans-serif; font-size: 1.03em; 
+        color: #f2f2f2; text-transform: none;
+    }
+    /*[required] {
+        border-color: white;
+        box-shadow: 0em 0em 0.3125em white;
+    }*/
+    :invalid {
+        border-color: orange;
+        box-shadow: 0em 0em 0.3125em red;
+    }
+
+/*  -------------------------------------------------------------
+  ESTILO DE ENLACES DE CLASE "boton"
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.boton{       
+    display: block;
+    height: 2.1em;
+    
+    font-family: Sans-Serif;
+    font-size: 1.2em;
+    font-weight:bold;
+        
+    text-align: center;
+    text-transform: none;
+    text-decoration: none;
+    
+    border-left: 0.1em solid #696969;
+    border-top: 0.1em solid #696969;
+    border-right: 0.1em solid #2a2a2a;
+    border-bottom: 0.1em solid #2a2a2a;
+    
+    filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='#474747', endColorstr='#020202',GradientType=0 ); /* IE6-9 */
+
+    color: #f2f2f2;
+    cursor: pointer;   
+}
+
+    /*  Modernizr: sombras en las caja
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */    
+    .boxshadow .boton{
+
+        text-shadow: 0em 0.042em 0em #1c240b;  
+        
+        box-shadow: inset 0em 0em 0.22em #787878;
+        -moz-box-shadow: inset 0em 0em 0.22em #787878;
+	-webkit-box-shadow: inset 0em 0em 0.22em #787878;
+        -o-box-shadow: inset 0em 0em 0.22em #787878;
+
+        background: -moz-linear-gradient(top, #474747 0%, #020202 100%);
+        background: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0%,#474747), color-stop(100%,#020202));
+        background: -o-gradient(linear, left top, left bottom,
+            color-stop(0%,#474747), color-stop(100%,#020202));
+    }
+        /*  Modernizr: cambia el color del boton al pasarle el mouse
+      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        .no-boxshadow .boton:hover{
+        filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='#4f4f4f', endColorstr='#121212',GradientType=0); /* IE6-9 */
+        }
+        .boxshadow .boton:hover{      
+        box-shadow: 0em 0em 0.3em #696969;
+        -moz-box-shadow: 0em 0em 0.3em #ffffff;
+	-webkit-box-shadow: 0em 0em 0.3em #696969;
+        -o-box-shadow: 0em 0em 0.3em #696969;
+        
+        filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='#4f4f4f', endColorstr='#121212',GradientType=0); /* IE6-9 */
+        background: -moz-linear-gradient(top, #4f4f4f 0%, #121212 100%);
+        background: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0%,#4f4f4f), color-stop(100%,#121212));
+        background: -o-gradient(linear, left top, left bottom,
+            color-stop(0%,#4f4f4f), color-stop(100%,#121212));
+        }
+    /*  Modernizr: cambia al dar click sobre el link
+      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        .no-boxshadow .boton:active{
+        filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='red', endColorstr='#4f4f4f',GradientType=0); /* IE6-9 */
+        }
+        .boxshadow .boton:active{   
+        box-shadow: 0em 0em 0.3em #696969;
+        -moz-box-shadow: 0em 0em 0.3em #ffffff;
+	-webkit-box-shadow: 0em 0em 0.3em #696969;
+        -o-box-shadow: 0em 0em 0.3em #696969;
+        
+        filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='red', endColorstr='#4f4f4f',GradientType=0); /* IE6-9 */
+        background: -moz-linear-gradient(top, #121212 0%, #4f4f4f 100%);
+        background: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0%,#121212), color-stop(100%,#4f4f4f));
+        background: -o-gradient(linear, left top, left bottom,
+            color-stop(0%,#121212), color-stop(100%,#4f4f4f));
+    }
+    
+    /*  Modernizr: bordes redondeados
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */   
+    .borderradius .boton {
+	/*border-radius: 0.32em;*/
+        -moz-border-radius: 0.5em;
+        -webkit-border-radius: 0.32em;
+        -o-border-radius: 0.32em;
+    }
+
+    /*  Modernizr: texto sombreado
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */ 
+    .textshadow .boton {
+        text-shadow: 0em 0.062em 0em #334f71;
+    }
+    .no-textshadow .boton {
+        border-radius: 0em;
+    }
+    
+/*  -------------------------------------------------------------
+  PIE DE PÁGINA
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+footer {
+    min-width: 100%;
+    width: 100%;
+    
+    margin: 0.3em auto 20em auto;
+    padding: 1.2em 0em 1.2em 0em;
+        
+    /*background: #b3c981; */
+    color: white;
+    font-style:oblique;
+    text-align: center;
+    filter: progid:DXImageTransform.Microsoft.gradient( 
+            startColorstr='#474747', endColorstr='#020202',GradientType=0 ); /* IE6-9 */
+}
+
+    .no-boxshadow #logo, .borderradius #cuadroTitulo, footer {
+         border-radius: 0em;
+         -webkit-border-radius: 0.3em 3em 0.3em 3em;
+         -moz-border-radius: 0.3em 3em 0.3em 3em;
+         -o-border-radius: 0.3em 3em 0.3em 3em;
+    }        
+
+
+/*  -------------------------------------------------------------
+  LETRA TIUTLOS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+h1 {
+    margin: 1.2em auto 1.2em auto;
+    
+    /*color: #344c39;     */
+    color: #f9f9f9;
+    font-size: 2.4em;
+    font-family:  'Germania One', 'Days One', serif;
+    word-spacing: 5px; 
+    letter-spacing: 1px;
+    /*font-style: italic;*/
+    font-weight: 100;
+
+    text-align: center;
+    text-transform: uppercase;
+    /*text-shadow: -0.032em -0.032em 0em #162118;  */
+    text-shadow: 0 1px 0 #5d5d5d,
+                 0 2px 0 #525252,
+                 0 3px 0 #3d3d3d,
+                 0 4px 0 #2a2a2a,
+                 0 5px 0 #000000,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+}
+
+/*  -------------------------------------------------------------
+  LETRA SUBTITULOS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+h2 {
+    margin: 0.3em auto 0.3em auto;
+    
+    color: #0d1f10;
+    font-size: 1.6em;
+    font-family: 'Bubblegum Sans', 'Kaushan Script', serif;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0em 0.062em 0em #f2f2f2;  
+}
+
+/*  -------------------------------------------------------------
+  LETRA DE "TIEMPO" Y "AYUDA"
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+h3 {
+    color: #0d1f10;                 
+    font-size: 1.2em;
+    font-family: 'Germania One', 'Bubblegum Sans', serif;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0em 0.062em 0em #f2f2f2; 
+}
+/*  -------------------------------------------------------------
+  LETRA DEL OPERADOR Y EL IGUAL
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+h4 {
+    color: #0d1f10;                   
+    font-size: 1.4em;
+    font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
+
+    /*text-align: center;*/
+    text-transform: uppercase;
+    text-shadow: 0em 0.062em 0em #f2f2f2; 
+}
+
+h6 {
+    font-style: italic;
+    font-family:'Bubblegum Sans', serif;
+}
+
+
+#btnSalir{
+    width: 7em;
+    height: 2.1em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+}
+
+p {
+    text-align: left;   
+}

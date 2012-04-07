@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 var tiempoTotal = 0;
-var preguntaContador=0;
+var numeroPregunta=0;
 var nivel=7;
 var preguntasCorrectas=0;
 var CronoID = null;
@@ -13,14 +13,14 @@ var pregunta;
 var tiempo;
 
 function inicializarEnteros(){
-    
+
 }
 function MostrarCrono() {
     if(segundos == tiempo){
         segundos=0;
         var eleccion = (pregunta[5]+2)%4;
         validarRespuesta(eleccion);
-        if(preguntaContador == 10){
+        if(numeroPregunta == 10){
             location.href='../../index.html';
         }
     }
@@ -49,23 +49,23 @@ function getRespuestaVerdadera(){
 
 function validarRespuesta(n){
     if(n == pregunta[5]){
-        preguntaContador++;
+        numeroPregunta++;
         preguntasCorrectas++;
         tiempoTotal = tiempoTotal + segundos;
         segundos=0;
-        document.getElementById('correctas').value = preguntasCorrectas;
-        document.getElementById('erroneas').value = preguntaContador - preguntasCorrectas;
-        document.getElementById('preguntaContador').value = preguntaContador;
+        document.getElementById('textoAciertos').value = preguntasCorrectas;
+        document.getElementById('textoDesaciertos').value = numeroPregunta - preguntasCorrectas;
+        document.getElementById('numeroPregunta').value = '#'+numeroPregunta;
         crearSetPregunta();
         setearNumerosEnteros();
     }
     else{
         tiempoTotal = tiempoTotal + segundos;
         segundos=0;
-        preguntaContador++;
-        document.getElementById('correctas').value = preguntasCorrectas;
-        document.getElementById('erroneas').value = preguntaContador - preguntasCorrectas;
-        document.getElementById('preguntaContador').value = preguntaContador;
+        numeroPregunta++;
+        document.getElementById('textoAciertos').value = preguntasCorrectas;
+        document.getElementById('textoDesaciertos').value = numeroPregunta - preguntasCorrectas;
+        document.getElementById('numeroPregunta').value = '#'+numeroPregunta;
         crearSetPregunta();
         setearNumerosEnteros();
     }
@@ -73,8 +73,8 @@ function validarRespuesta(n){
 
 function setearNumerosEnteros(){
     for(var i = 1; i < 5; i++){
-        document.getElementById('btn' + i).value = pregunta[4][i-1];
+        document.getElementById('respuesta' + i).value = pregunta[4][i-1];
     }
-    if(preguntaContador != 0)
+    if(numeroPregunta != 0)
           document.getElementById('SubHtml').contentDocument.location.reload(true);
 }

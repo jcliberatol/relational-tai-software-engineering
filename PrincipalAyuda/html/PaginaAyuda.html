@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>PáginaAyuda</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <!-- Combo-handled YUI CSS files: reset,base,font,grids --> 
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.9.0/build/reset-fonts-grids/reset-fonts-grids.css&2.9.0/build/base/base-min.css"> 
+        
+        <!-- diseño css "LoginDesign.css"-->   
+        <link rel="stylesheet" href="../css/DiseñoPaginaAyuda.css" type="text/css" 
+              media="screen">
+        
+        <!-- archivo javaScrit -->   
+        <script type="text/javascript" src="../js/PaginaPrincipal.js"></script>
+        
+        <!--Libreria modernizr utilizada en el documento css-->
+        <script src="../../Complementos/modernizr.2.5.3.js"></script> 
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript">
+                $(function() {
+                if ($.browser.msie && $.browser.version.substr(0,1)<7)
+                {
+                        $('li').has('ul').mouseover(function(){
+                                $(this).children('ul').show();
+                                }).mouseout(function(){
+                                $(this).children('ul').hide();
+                                })
+                }
+                });
+        </script>
+    </head>
+    
+    <body>
+        <div id="cuerpo">
+            <header>
+                <div id="logo">
+                    <div id="imagenLogo"></div>
+                </div>
+                <figure id="cuadroTitulo"> 
+                    <h1>TUTOR ADAPTATIVO INTELIGENTE</h1>
+                </figure>
+            </header>
+        <!--<iframe src="#" name="principal" scrolling="auto">
+            aqui esta el iframe
+        </iframe>-->
+            
+            <nav>
+                <ul id="menu">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Ayuda</a>
+                        <ul>
+                            <li>
+                                <a href="#">Enteros</a>
+                                <ul>
+                                    <li><a href="#">Suma</a></li>
+                                    <li><a href="#">Resta</a></li>
+                                    <li><a href="#">Multiplicación</a></li>
+                                    <li><a href="#">División</a></li>
+                                 </ul>
+                            </li>
+                            <li>
+                                <a href="#">Fraccionarios</a>
+                                <ul>
+                                    <li><a href="#">Suma</a></li>
+                                    <li><a href="#">Resta</a></li>
+                                    <li><a href="#">Multiplicación</a></li>
+                                    <li><a href="#">División</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Decimales</a>
+                                <ul>
+                                    <li><a href="#">Suma</a></li>
+                                    <li><a href="#">Resta</a></li>
+                                    <li><a href="#">Multiplicación</a></li>
+                                    <li><a href="#">División</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </nav>
+            <div id="contenedorColumnas">
+                        
+                <div id="columnaPrincipal">
+                    <table>
+                        <tr><td><h2>EJEMPLOS/TEORIA</h2></td></tr>
+                        <tr><td><p>Realizar una suma
+
+                        El procedimiento estándar para efectuar sumas de varios
+                        números, llamados "sumandos", es el siguiente:<br/><br/>
+                        Los sumandos se colocan en filas sucesivas ordenando
+                        las cifras en columnas, empezando por la derecha con
+                        la cifra de las unidades(U), a la izquierda las 
+                        decenas(D), la siguiente las centenas(C), la siguiente
+                        los millares(M), etc.<br/><br/>
+                        La suma de los números 750 + 1583 + 69 se ordenarían
+                        de la siguiente forma:<br/><br/>
+
+                        Descripción: <br/><br/>
+                        <img src="../imagenes/paso1.png"/>
+                        <br/><br/>
+                        Se suman en primer lugar las cifras de la columna de
+                        las unidades según las tablas elementales, colocando
+                        en el resultado la cifra de unidades que resulte; 
+                        cuando estas unidades sean más de 10 las decenas se
+                        acumulan como un sumando más en la fila de acarreo.
+                        En este caso 3 más 9 son 12, el 2 del 12 se pone en
+                        la parte inferior y el 1 se pasa como acarreo en la
+                        columna siguiente.
+                        <br/><br/>
+                        <img src="../imagenes/paso2.png"/>
+                        <br/><br/>
+                        En la columna de las decenas, procediendo entonces
+                        a la suma de esa columna como si fueran unidades.
+                        Sumamos el 1 del acarreo más 5, 8 y 6 que dan un 
+                        total de 20, el 0 de 20 se pone en la parte inferior
+                        como resultado y el 2 se pasa como acarreo a la 
+                        columna siguiente.
+                        <br/><br/>
+                        <img src="../imagenes/paso3.png"/>
+                        <br/><br/>
+                        Se procede de igual forma con la columna de las
+                        decenas, acarreo incluido, colocando en la fila 
+                        de acarreo sobre la columna de las centenas las 
+                        decenas (de unidades de decenas).
+                        En la columna de las centenas tenemos, el 2 de 
+                        acarreo, el 7 y el 5 que sumados dan 14, el 4 del
+                        14 se pone en la parte inferior y el 1 se pasa a
+                        la siguiente columna como acarreo.
+                        <br/><br/>
+                        <img src="../imagenes/paso4.png"/>
+                        <br/><br/>
+                        Se procede de igual forma con todas las columnas, 
+                        añadiendo a la columna última de la izquierda las
+                        decenas de la columna anterior en vez de subir a 
+                        la fila de acarreo.
+                        En la columna de los millares tenemos 1 de acareo
+                        más el 1 de sumando que sumados dan 2, que se pone
+                        en la parte inferior como resultado, al no haber 
+                        mas sumandos damos por finalizada la operación.
+                        <br/><br/>
+                        <img src="../imagenes/paso5.png"/>
+                        <br/><br/>
+                        Normalmente los acarreos o llevadas no se anotan
+                        en el papel, sumando directamente el acarreo a 
+                        los sumandos de la columna siguiente y el aspecto
+                        de la realización de la suma sin las anotaciones
+                        auxiliares sería el siguiente:
+                        <br/><br/>
+                        <img src="../imagenes/paso6.png"/>
+                        <br/><br/>
+                        </p></td></tr>
+                    </table>
+                </div>
+                <div id="columnaSecundaria">
+                    <table>
+                        <tr><td><h2>VIDEOS</h2></td></tr>
+                        <tr><td><video src="http://www.youtube.com/watch?v=0GbV8CGnnH8" controls="controls" ></video></td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <footer>
+                <div id="pieDePagina">pie de pagina</div>
+            </footer>
+        </div>
+    </body>
+</html>

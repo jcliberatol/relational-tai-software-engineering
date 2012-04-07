@@ -6,99 +6,35 @@
         Purpose of the stylesheet follows.
 */
 
-/*  -------------------------------------------------------------
-  Se importan fuentes de texto externas
-  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-@import url('http://fonts.googleapis.com/css?family=Jolly+Lodger');
-@import url('http://fonts.googleapis.com/css?family=Kaushan+Script');
-@import url('http://fonts.googleapis.com/css?family=Bubblegum+Sans');
-@import url('http://fonts.googleapis.com/css?family=Germania+One');
+/*Se importa Diseño base*/
+@import url(../../Complementos/DiseñoBase.css);
 
 /*  -------------------------------------------------------------
-  CUERPO DE LA PAGINA  -  [em = 1÷16 × tamaño deseado en píxeles]
+  TITULO "Tutor Adaptativo Inteligente"
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-body {
-    min-width: 63em;
-    width:100%;
-    height: 100%;
-    
-    margin: auto auto auto auto;
-    padding: 0 0 1em 0;
-    background: #c4e4b5;  
-    
-    font-size: 1em;
-    font-family: sans-serif;
-}
+#cuadroTitulo {}
+
 /*  -------------------------------------------------------------
-  CONTENEDOR DE: CABECERA, TEST E INFORMACION
+  CONTENEDOR DE LOGIN Y REGISTRO
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-#cuerpo{
-    width: 63em;
-    min-width: 63em;
-    height: 50em;
-    
-    margin: auto;
-    padding: 1em;
-    /*background: #e5efd1;  /*verde palido*/
-    background: #c4e4b5;  /*verde vivo*/
-    /*background: #ede8cd; /*color beige amarilloso*/
-    
-    font-size: 1em;
-    font-family: sans-serif;
-}
+#cuerpo{}
+
 /*  -------------------------------------------------------------
-  TITULO "Examen Inicial"
+  COLUMNAS: (pregunta e información)
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-#cuadroTitulo {
-    min-width: 60em;
-    width: 60em;
-    height: 11.875em;
-    
-    margin: auto auto auto auto;
-    padding: 1.44em;
-          
-    background-image: url(../imagenes/ExamenInicial.png);
-    
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
+form{
+    padding: 1em 1.1em 1em 2em; 
 }
-/*  -------------------------------------------------------------
-  COLUMNAS: (login y registro)
-  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-#test {
-    width: 40em;
-    
-    float: left;
-    margin: 1em 1em 1em auto;
-    padding: 0.3em 1.5em 1em 0.5em;
-}
-#informacion {
-    width: 15em;
-   
-    float: right;
-    margin: 1em auto 1em 1em;
-    padding: 0.3em 1em 1em 1em;
-}
-/*  Modernizr: sombras y degradé de "login" y "registro"
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-    .no-boxshadow #test, .no-boxshadow #informacion {       
-        background-color: #b3c981;
-        filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=4);
-    }    
-    /*  Modernizr: sombras y degradé de "login" y "registro"
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-    .boxshadow #test, .boxshadow #informacion {       
-        background-color: #afc779;
-        border: 0.06em solid #e1e1e1;
-        
-	-moz-box-shadow: 0em 0em 0.62em #444;
-	-webkit-box-shadow: 0em 0em 0.62em #444;
-        
-        background: -moz-linear-gradient(top, #cce98b 0%, #8da655 100%);
-	background: -webkit-gradient(linear, left top, left bottom,
-            color-stop(0%,#c0da85), color-stop(100%,#7d944b));
-    }    
+    #test {
+        width: 39.7em;
+        margin: 1em 1em 1em 1em;
+        padding: 0.3em 0em 1em 0em;
+    }
+    #informacion {
+        width: 8em;
+        margin: 1em auto 1em 0em;
+        padding: 0.3em 0.4em 1em 0.4em;
+    }
     /*  Modernizr: bordes redondeados "login" y "registro"
        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
     .borderradius #test, .borderradius #informacion {
@@ -114,242 +50,191 @@ body {
         -moz-border-radius-bottomright: 1.5em;
         -moz-border-radius-topleft: 1.5em;
     }
-/*  -------------------------------------------------------------
-  PREGUNTA
-  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*  Cuadros de los números 
+    
+    #test table, #test tr, #test td {
+        /*border: 0 solid black;*/
+        width: 39em;
+        text-align: center;
+    }
+    
+    #informacion table, #informacion tr, #informacion td {
+        /*border: 0 solid black;*/
+        width: 8em;
+        text-align: center;
+    }
+
+    /*  ESTILO DE CUADROS DE ENTRADA
    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-#question {
-    width: 17em;
-    height: 1.3em;
-    
-    margin: 0em 0.3em 0em 0.3em;
-    padding: 0em 0.3em 0.1em 0.3em;
-    
-    background-color: transparent;
-    border: none;
-    text-align: center;
-    font-size: 1.1em;
-    font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
+input {
+    margin: 0.3em;
 }
-/*  Cuadro de respuesta 
-   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-#response {
-    width: 3.6em;
-    height: 1.3em;
-    margin: 0em 0em 0em 0.4em;
-    padding: 0em 0.3em 0.1em 0.3em;
-    
-    text-align: center;
-    font-size: 1.1em;
-    font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
-}
-/*  Modernizr: bordes redondeados
-   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-    .borderradius #response {
-        border-radius: 0.5em;
-        -webkit-border-radius: 0.5em;
-        -moz-border-radius: 0.5em;
+
+    #numeroPregunta, #tituloTest {
+        float: left;
+        background-color: transparent;
+        border: none;
+        font-family: 'Bubblegum Sans', 'Kaushan Script', serif;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 0em 0.062em 0em #f2f2f2;
     }
-    
+    #numeroPregunta{
+        width: 1.8em;   
+        color: #0d1f10;
+        font-size: 1.4em;
+        font-style: italic;
+  
+    }
+    #tituloTest {
+        width: 8em;
+        margin: 0.3em 0.3em 0.3em 4.5em;
+        
+        color: #0d1f10;
+        font-size: 1.5em;
+    }
+
+    #pregunta{
+        width: 20em;
+        margin: 3em 0.3em 1em 0.3em;
+        padding: 0em 0.3em 0.1em 0.3em;
+
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        font-size: 1.8em;
+        font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
+        color: #344c39;
+        border-radius: 0em;
+        border: 0em solid white;
+    }
+        /*  Modernizr: sombras de los cuadros
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        .boxshadow input {
+            box-shadow: 0em 0em 0em transparent;
+            -moz-box-shadow: 0em 0em 0em transparent;
+            -webkit-box-shadow: 0em 0em 0em transparent;
+            -o-box-shadow: 0em 0em 0em transparent;
+        }
+    /*  Cuadro de respuesta 
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+
+    #respuestas {
+        /*background: white;*/
+        text-align: center;
+    }
+    #respuestas .numeroRespuesta {
+        /*float: left;*/
+        font-size: 1em;
+        margin: auto auto auto 4.3em;
+    }
+    #respuestas .boton{
+        width: 6em;
+        height: 2.2em;
+        
+        margin: auto auto auto auto;
+        font-size: 1.4em;
+    }
+ 
+/*  -------------------------------------------------------------
+  ESTILO DE ENLACES DE CLASE "boton"
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .boton{
-    float: left;
-    position: relative;
-    display: block; width: 4.5em; height: 2.5em;
-    margin: 1em 1em 1em 1em;
-        
-    font-family: Sans-Serif; font-size: 1.5em; text-align: center;
-    text-transform: none; text-decoration: none;
-    color: black;
-       /*    color: #f2f2f2;*/
-    cursor: pointer;   
-}
-    /*  Modernizr: sombras en las caja
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */    
-    .boxshadow .boton{
-        color: #f2f2f2;
-        font-weight:bold;
-        text-shadow: 0em 0.042em 0em #1c240b;  
-        
-    	background: -moz-linear-gradient(top, #b3d379 0%, #283405 100%);
-	background: -webkit-gradient(linear, left top, left bottom,
-            color-stop(0%,#a1bd6e), color-stop(100%,#304214));
-         box-shadow: inset 0em 0em 0.44em #bbcc8a;
-        -moz-box-shadow: inset 0em 0em 0.44em #bbcc8a;
-	-webkit-box-shadow: inset 0em 0em 0.44em #bbcc8a;
-    }
-    /*  Modernizr: cambia el color del boton al pasarle el mouse
-      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-        .boxshadow .boton:hover{        
-    	background: -moz-linear-gradient(top, #6fb8d3 0%, #003e55 100%);
-	background: -webkit-gradient(linear, left top, left bottom,
-            color-stop(0%,#6fb8d3), color-stop(100%,#003e55));
-         box-shadow: inset 0em 0em 0.44em #b0bc8f;
-        -moz-box-shadow: inset 0em 0em 0.44em #b0bc8f;
-	-webkit-box-shadow: inset 0em 0em 0.44em #b0bc8f;
-    }
-        /*  Modernizr: cambia al dar click sobre el link
-      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-        .boxshadow .boton:active{   
-    	background: -moz-linear-gradient(top, #003e55 0%, #69a6bd 100%);
-	background: -webkit-gradient(linear, left top, left bottom,
-            color-stop(0%,#003e55), color-stop(100%,#6fb8d3));
-         box-shadow: inset 0em 0em 0.44em #b0bc8f;
-        -moz-box-shadow: inset 0em 0em 0.44em #b0bc8f;
-	-webkit-box-shadow: inset 0em 0em 0.44em #b0bc8f;
-    }
+    width: 5em; 
+    height: auto;  
     
-    /*  Modernizr: bordes redondeados
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */   
-    .borderradius .boton {
-	border-radius: 0.32em;
-        -moz-border-radius: 0.32em;
-        -webkit-border-radius: 0.32em;
-    }
-    /*  Modernizr: texto sombreado
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */ 
-    .textshadow .boton {
-        text-shadow: 0em 0.062em 0em #334f71;
-    }
+    margin: 0.6em auto 0.1em auto;
+    padding: 0.2em 0.7em 0.2em 0.7em;
+    
+    font-size: 0.9em;
+    font-weight:normal;
+}
+
 /*  -------------------------------------------------------------
   CUADRO TIEMPO, CUADRO AYUDA
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-#tiempo ,#ayuda{
-    width: 15em;
+#tiempo ,#aciertos , #desaciertos, #nivel{
     border: 0.06em solid #6a8040;
     background-position: center;
-    margin: 1em auto 1em auto;
+    margin: 0.2em auto 0.2em auto;
 }
-    .borderradius #tiempo, .borderradius #ayuda {
+    .borderradius #tiempo, .borderradius #aciertos, .borderradius #desaciertos, .borderradius #nivel{
         border-radius: 0.5em;
         -webkit-border-radius: 0.5em;       
         -moz-border-radius: 0.5em;
     }
-    /*  Cuadro reloj
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */      
-#time {
-    width: 3.5em;
-    height: 1.9em;
-    
-    margin: 0em 0.3em 0.6em 0.3em;
-    
-    background-color: black;
-    border: 0.035em solid #d0d2cd;
 
-    text-align: center;
-    color: #e10303;
-    font-size: 2em;
-    font-family: 'Kaushan Script', 'Bubblegum Sans', serif;   
-}  
-    .no-boxshadow #time {       
-        filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=4);
-    }    
-    /*  Modernizr: sombras y degradé de "login" y "registro"
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-    .boxshadow #time {       
-        box-shadow: 0em 0em 0.1em #cecece;
-	-moz-box-shadow: 0em 0em 0.1em #cecece;
-	-webkit-box-shadow: 0em 0em 0.1em #cecece;
-    }    
-    .borderradius #time {
-        border-radius: 0.4em;
-        -webkit-border-radius: 0.4em;       
-        -moz-border-radius: 0.4em;
-    }
-    .textshadow #time {
-        text-shadow: 0em 0em 0.02em #ff9494, 0.007em 0.007em 0.01em #ffbdbd;
-    }
+   /*  Cuadro reloj
+       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */      
+    #time {
+        width: 3em;
+        margin: 0em auto 0.2em auto;
+
+        background-color: black;
+        border: 0.035em solid #d0d2cd;
+
+        text-align: center;
+        color: #e10303;
+        font-size: 1.2em;
+        font-family: 'Kaushan Script', 'Bubblegum Sans', serif;   
+    }  
+        .no-boxshadow #time {       
+            filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=4);
+        }    
+        /*  Modernizr: sombras y degradé de "login" y "registro"
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+        .boxshadow #time {       
+            box-shadow: 0em 0em 0.1em #cecece;
+            -moz-box-shadow: 0em 0em 0.1em #cecece;
+            -webkit-box-shadow: 0em 0em 0.1em #cecece;
+            -o-box-shadow: 0em 0em 0.1em #cecece;
+        }    
+        .borderradius #time {
+            border-radius: 0.4em;
+            -webkit-border-radius: 0.4em;       
+            -moz-border-radius: 0.4em;
+            -o-border-radius: 0.4em;
+        }
+        .textshadow #time {
+            text-shadow: 0em 0em 0.02em #ff9494, 0.007em 0.007em 0.01em #ffbdbd;
+        }
     /*  Cuadro Ayuda ?
        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */     
-#puntaje {
-    width: 5em;
-    height: 2.3em;
-    
-    /*padding: 0em 0.3em 0.1em 0.3em;*/
-    
-    background-color: transparent;
-    border: none;
+    #textoAciertos , #textoDesaciertos, #textoNivel {
+        width: 3em;
+        height: 1em;
+        margin: 0em 0.3em 0.4em 0.3em;
 
-    text-align: center;
-    color: #e90000;
-    font-size: 2em;
-    font-family: 'Kaushan Script', 'Bubblegum Sans', serif;   
-}  
-    .borderradius #help  {
-        border-radius: 0.4em;
-        -webkit-border-radius: 0.4em;       
-        -moz-border-radius: 0.4em;
-    }
-    .textshadow #help {
-        text-shadow: 0em 0em 0.02em #ff9494, 0.007em 0.007em 0.01em #ffbdbd;
-    }
+        background-color: transparent;
+        border: none;
+
+        text-align: center;
+        color: #e90000;
+        font-size: 1.2em;
+        font-family: 'Kaushan Script', 'Bubblegum Sans', serif;   
+    }  
+        .borderradius #help  {
+            border-radius: 0.4em;
+            -webkit-border-radius: 0.4em;       
+            -moz-border-radius: 0.4em;
+        }
+        .textshadow #help {
+            text-shadow: 0em 0em 0.02em #ff9494, 0.007em 0.007em 0.01em #ffbdbd;
+        }
 /*  -------------------------------------------------------------
   PIE DE PÁGINA
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-#pieDePagina {
-    min-width: 63em;
-    width: 63em;
-    height: 1em;
+footer {}
+
+
+/*  -------------------------------------------------------------
+  LETRA SUBTITULOS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+h2 {            
+    font-size: 1.2em;
+}
+
+h3 {            
+    font-size: 1.05em;
+}
     
-    margin: 1em auto auto auto;
-    padding: 1em;
-        
-    background: #b3c981;
-    background-repeat: no-repeat;
-    background-position: center;
-    
-    font-style:oblique;
-}
-/*  -------------------------------------------------------------
-  LETRA DE LA CABECERA
-  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-h1 {
-    font-size: 2em;
-}
-/*  -------------------------------------------------------------
-  LETRA DE "INICIO SESIÓN" Y "REGISTRO"
-  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-h2 {	  
-    color: #0d1f10;                 
-    font-size: 2em;
-    font-family: 'Bubblegum Sans', 'Kaushan Script', serif;
-    margin: 1em auto 1em auto;
-
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0em 0.062em 0em #f2f2f2;  
-}
-/*  -------------------------------------------------------------
-  LETRA DE "TIEMPO" Y "AYUDA"
-  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-h3 {
-    color: #0d1f10;                 
-    font-size: 1.6em;
-    font-family: 'Germania One', 'Bubblegum Sans', serif;
-
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0em 0.062em 0em #f2f2f2; 
-}
-/*  -------------------------------------------------------------
-  LETRA DEL OPERADOR Y EL IGUAL
-  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-h4{
-    color: #0d1f10;
-    font-size: 2em;
-    font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
-    background: transparent;  /*verde vivo*/
-
-    /*text-align: center;*/
-    text-transform: uppercase;
-    text-shadow: 0em 0.062em 0em #f2f2f2; 
-}
-
-h5 {
-    color: #0d1f10;
-    font-family: 'Kaushan Script', 'Bubblegum Sans', serif;
-
-    /*text-align: center;*/
-    text-transform: uppercase;
-    text-shadow: 0em 0.062em 0em #f2f2f2;
-}

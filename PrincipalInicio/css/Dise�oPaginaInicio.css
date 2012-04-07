@@ -1,7 +1,9 @@
 /* 
-    Document   : LoginDesign
-    Created on : 10-mar-2012, 16:51:23
-    Purpose of the stylesheet follows.
+    Document   : DiseñoPaginaPrincipal
+    Created on : 13-mar-2012, 19:03:46
+    Author     : familia
+    Description:
+        Purpose of the stylesheet follows.
 */
 
 /*Se importa Diseño base*/
@@ -12,34 +14,56 @@
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 body {}
 
+
+/*  -------------------------------------------------------------
+  TITULO "Tutor Adaptativo Inteligente"
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+#bienvenida {
+    display: inline-table;
+    
+    margin: auto;
+    padding: 0em 0em 0em 0em;
+    width: 100%;
+    /*border: 0.1em solid white;*/
+    background: white;
+}
 /*  -------------------------------------------------------------
   TITULO "Tutor Adaptativo Inteligente"
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #cuadroTitulo {}
 
 /*  -------------------------------------------------------------
-  CONTENEDOR DE LOGIN Y REGISTRO
+  CONTENEDOR DE TODA LA PAGINA
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-#cuerpo{}
+#cuerpo{
+    /*background: yellow;*/
+}
 
 /*  -------------------------------------------------------------
-  COLUMNAS: (login y registro)
+  CAJA CON EL CONTENIDO
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-form{
-    width: 20em; 
-    padding: 1em 1.1em 1em 2em; 
+#contenedorColumnas{
+    margin: 0.3em auto auto auto;
 }
-    #formularioLogin{
-        margin: 0.8em 1em 1em 1em;
-    } 
-    #formularioRegistro {
-        margin: 0.8em 1em 1em 1.2em;
+
+/*  -------------------------------------------------------------
+  CONTENEDOR DE COLUMNAS
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+#contenedorColumnas{}
+
+    table {
+        margin: 0;
+        width: 100%;
+        text-align: center;
     }
-    table,tr,td {
-        width: 8em;
+    tr,td {
+        border: 0em solid black;
+        margin: 0;
         text-align: center;
     }
 
+   
 /*  -------------------------------------------------------------
   ESTILO DE ETIQUETAS
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -63,7 +87,7 @@ input {
     /* Select
        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
     #selectNivel {
-        width: 12.5em; 
+        width: 12.56em; 
         height: 2em; 
         margin: 0.55em auto 0.7em 0.9em;
     }
@@ -72,22 +96,27 @@ input {
   ESTILO DE ENLACES DE CLASE "boton"
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .boton{
-    width: 8em; 
-    /*height: auto;  */
-    
+    width: 9em; 
+    height: 3em;
     clear: both;
     float: right;
-    margin: 0.5em auto 0.5em 4.5em;
+    margin: 0.5em auto 0.5em auto;
+
 }
+
+#btnEnteros, #btnFraccionarios, #btnDecimales {
+    float:none;
+    /*margin: 0.5em 1em 0.5em 2em;*/
+}
+
   
 /*  -------------------------------------------------------------
   PIE DE PÁGINA
   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 footer {}
 
-/*  -------------------------------------------------------------
-  TITULOS DE LOS FORMULARIOS
-  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-h2{
-   text-align: center;
+
+h6 {
+    margin: auto 1em auto auto;    
+    text-align: right;
 }

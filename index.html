@@ -1,78 +1,127 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
-
-<!--  Activa el modo standard de los navegadores -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-
 <html>
     
     <head>   
         <title>Tutor Adaptativo Inteligente</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">      
-       
-        <!-- Combo-handled YUI CSS files: reset,base,font,grids --> 
-        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.9.0/build/reset-fonts-grids/reset-fonts-grids.css&2.9.0/build/base/base-min.css"> 
-        
+ 
         <!-- diseño css "LoginDesign.css"-->   
         <link rel="stylesheet" href="Login/css/loginDesign.css" type="text/css" 
               media="screen">
         
+        <!--Archivo jquery-->
+        <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+
         <!-- archivo javaScrit -->   
         <script type="text/javascript" src="Login/js/LoginJS.js"></script>
         
         <!--Libreria modernizr utilizada en el documento css-->
-        <script src="Complementos/modernizr.min.js"></script> 
+        <script src="Complementos/modernizr.2.5.3.js"></script>
+
     </head>
     
-    <body onLoad="document.getElementById('nombreInicio').focus();">      
-        <article id="cuerpo" name="cuerpo" class="yui-g" class="yui-u first">
-                    
+    <body onLoad="document.getElementById('nombreInicio').focus();">               
+        
+        <div id="cuerpo">
+                
             <header>
-                <div id="cuadroTitulo"></div>
+                <div id="logo">
+                    <div id="imagenLogo"></div>
+                </div>
+                <div id="cuadroTitulo"> 
+                    <h1>TUTOR ADAPTATIVO INTELIGENTE</h1>
+                </div>
             </header>
             
-            <section id="login" name="login">
-               <form id="formularioLogin" name="formularioLogin">
-                   <h2>Iniciar Sesión</h2>
-                       <label for="name"><h3>Usuario:</h3></label>
-                       <input type="text" id="nombreInicio" name="usuario" 
-                              placeholder="Ingrese su usuario"/>
-                       
-                       <label for="name"><h3>Contraseña:</h3></label>
-                       <input type="password" id="passInicio" 
-                              placeholder="Ingrese su contraseña">
-                       
-                       <input type="button" class="boton" id="btnIniciarSesion" value="Iniciar Sesión"  onClick=" window.location.href='PrimaryTest/html/primarytest.html' ">
-               </form> 
-            </section>
             
-            <section id="registro" name="registro" class="yui-u">   
-               <form id="formularioRegistro" name="formularioRegistro">
-                   <h2>Registrarse</h2>
-                       <label for="name"><h3>Usuario:</h3></label>
-                       <input type="text" id="nombreRegistro" 
-                              placeholder="Ingrese su usuario"/>
-                       
-                       <label for="name"><h3>Contraseña:</h3></label>
-                       <input type="password" id="passRegistro" 
-                              placeholder="Ingrese su contraseña">
-                       
-                       <label for="name"><h3>Verifique la contraseña:</h3></label>
-                       <input type="password" id="pass2Registro" 
-                              placeholder="Repita su contraseña">
-                       
-                       <input type="button" class="boton" id="btnRegistrarme" value="Registrarme"  onClick=" window.location.href='Principal/html/PaginaPrincipal.html' ">
-               </form>          
-            </section>
-            
-        </article>
-        
-        <footer>
-            <div id="pieDePagina">pie de página</div>
-        </footer>
+            <div id="contenedorColumnas">
+                <form id="formularioLogin" name="formularioLogin" 
+                action="Servidor\Servidores.php" method="post">
+                    <table>
+                        <tr><td><h2>Iniciar Sesión</h2></td></tr>   
+
+                        <tr><td><label>Usuario:</label></td></tr>
+                        <tr><td><input type="text" id="nombreInicio" name="username" 
+                                placeholder="Ingrese su usuario"/ required></td></tr>
+
+                        <tr><td><label>Contraseña:</label></td></tr>
+                        <tr><td><input type="password" id="passInicio" name="password"
+                                placeholder="Ingrese su contraseña" required></td></tr>
+
+                        <tr><td><input type="submit" class="boton" id="btnIniciarSesion" value="Acceder"/></td></tr>
+                    </table>
+                </form> 
+
+                <form id="formularioRegistro" name="formularioRegistro"
+                action="Servidor\Registro.php">
+                    <table>
+                        <tr><td><h2>Registrarse</h2>
+                        <tr><td><label>Usuario:</label></td></tr>
+                        <tr><td><input type="text" onchange="showUser(this.value)" id="nombreRegistro" 
+                                placeholder="Ingrese su usuario" name="usernameRegistro"
+                                required />
+                        <tr><td><div id="txtHint"><b></b></div>
+                        <tr><td><label>Contraseña:</label></td></tr>
+                        <tr><td><input type="password" id="passRegistro" name="passwordRegistro"
+                                placeholder="Ingrese su contraseña" required> 
+                        <tr><td><label>Verifique la contraseña:</label></td></tr>
+                        <tr><td><input type="password" id="pass2Registro"  name="passwordRegistro2"
+                                placeholder="Repita su contraseña" required>   
+                        <tr><td><label>Email:</label></td></tr>
+                        <tr><td><input type="email" id="email" 
+                                placeholder="email@dominio.com" required></td></tr>
+
+                        <tr><td><label id="nivel">Nivel:</label>
+                        <select id="selectNivel" >
+                                <option value="1">Krilin</option>
+                                <option value="2">Sayayin</option>
+                                <option value="3">Super Sayayin fase 1</option>
+                                <option value="4">Super Sayayin fase 2</option>
+                                <option value="5">Super Sayayin fase 3</option>
+                                <option value="6">Super Sayayin fase 4</option>
+                        </select></td></tr>
+
+                        <tr><td><input type="submit" class="boton" id="btnRegistrarme" value="Registrarse"/></td></tr>
+                    </table>
+                </form>
+            </div>
+      
+            <footer>
+                <div id="pieDePagina">pie de página</div>
+            </footer>
+                
+        </div>
+         
+            <script type="text/javascript">
+            function showUser(str)
+            {
+            if (str=="")
+              {
+              document.getElementById("txtHint").innerHTML="";
+              return;
+              } 
+            if (window.XMLHttpRequest)
+              {// code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+              }
+            else
+              {// code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+              }
+            xmlhttp.onreadystatechange=function()
+              {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+                }
+              }
+            xmlhttp.open("GET","Servidor\\ObtenerD.php?q="+str,true);
+            // xmlhttp.open("GET","Servidor\\ObtenerD.php?q="+str+"&passwordRegistro="123"&passwordRegistro2"=123);
+
+            xmlhttp.send();
+            }
+            </script>
 
     </body>
+
 </html>
