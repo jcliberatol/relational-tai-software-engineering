@@ -18,13 +18,14 @@ and open the template in the editor.
         
         <!-- diseño css "LoginDesign.css"-->   
         <link rel="stylesheet" href="../css/PrimaryTest.css" type="text/css" media="screen">
+        
         <script type="text/javascript" src="../js/Navegadores.js"></script>
         <script type="text/javascript" src="../js/PrimaryTest.js"></script>
         <script type="text/javascript" src="../js/ModuloEnteros.js"></script>
         <script type="text/javascript" src="../js/cookiePregunta.js"></script>
         <script type="text/javascript" src="PaginaPrincipalJS_1.js"></script>
         <!--Libreria modernizr utilizada en el documento css-->
-        <script src="../../Complementos/modernizr.min.js"></script> 
+        <script src="../../Complementos/modernizr.2.5.3.js"></script> 
         <!--Libreria jquery para el uso de eventos-->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="http://api.jquery.com/scripts/events.js"></script>
@@ -38,73 +39,128 @@ and open the template in the editor.
     
     <body onLoad="document.getElementById('btn1').focus();">
         
-        <article id="cuerpo">
-            
-            <header id="cabecera">
-                <div id="cuadroTitulo"></div>
+        <div id="cuerpo" name="cuerpo">          
+            <header>
+                <div id="logo">
+                    <div id="imagenLogo"></div>
+                </div>
+                <figure id="cuadroTitulo">
+                    <h1>TUTOR ADAPTATIVO INTELIGENTE</h1>
+                </figure>
             </header>
             
-            <div id="test">
-                <form id="pregunta">
-                    <h2>Pregunta<br><br></h2>
-                        <h4>
+            <div id="contenedorColumnas">
+                <form id="test">
+                    <table>
+                        <tr>
+                            <td>
+                                <!--<input type="text" id="numeroPregunta" value="#1"/>-->
+                                <script type="text/javascript">
+                                    var puntaje="0";
+                                    document.write('<br><input type="text" id="numeroPregunta" class="puntaje" value="#' + puntaje + '" readonly="readonly" />');
+                                    inicializarEnteros();
+                                </script>
+                                <input type="text" id="tituloTest" value="FRACCIONARIOS" /> <!--el titulo debe ser una variable-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <!--<input type="text" id="pregunta" name="usuario" 
+                            value="Aqui va la pregunta!!" required="required"/> -->
+                            
+                            <!--esto es de Freddy-->
                             <iframe src="pregunta.html" id="SubHtml" width="500" height="100" scrolling="no" frameborder="0">
                             </iframe>
+                            <!--Hasta aquí-->
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <table id="respuestas">
+                                <tr><td><label class="numeroRespuesta" for="name">1.</label></td>
+                                    <td><label class="numeroRespuesta" for="name">2.</label></td>
+                                    <td><label class="numeroRespuesta" for="name">3.</label></td>
+                                    <td><label class="numeroRespuesta" for="name">4.</label></td>
+                                </tr>
+                                <tr>
+                                    <script type="text/javascript">
+                                        crearSetPregunta();
+                                        //document.write(getPregunta());
+                                        document.write('<td><input type="button" class="boton" id="respuesta1" onClick="validarRespuesta(0)"/></td>');
+                                        document.write('<td><input type="button" class="boton" id="respuesta2" onClick="validarRespuesta(1)"/></td>');
+                                        document.write('<td><input type="button" class="boton" id="respuesta3" onClick="validarRespuesta(2)"/></td>');
+                                        document.write('<td><input type="button" class="boton" id="respuesta4" onClick="validarRespuesta(3)"/></td>');
+                                        $("#respuesta1").keypress(function(event) {
+                                            if (event.which == 13 ) {
+                                                event.preventDefault();
+                                            }
+                                            if(event.which == 49){
+                                                document.getElementById("respuesta1").click();
+                                            }
+                                            if(event.which == 50){
+                                                document.getElementById("respuesta2").click();
+                                            }
+                                            if(event.which == 51){
+                                                document.getElementById("respuesta3").click();
+                                            }
+                                            if(event.which == 52){
+                                                document.getElementById("respuesta4").click();
+                                            }
+                                        });
+                                        setearNumerosEnteros();
+                                    </script>
+                                </tr>
+                            </table>
+                        </tr>
+                    </table>
+                </form>
+                
+                <form id="informacion">
+                    <table>
+                        <tr><td><h2>Información</h2></td></tr>
+                        <tr><td><div id="tiempo">
+                            <h3>Tiempo</h3>
+                            <div id="reloj">
+                                <script type="text/javascript">
+                                    document.write('<input type="text" id="time" size="4" class="time" value="" readonly="readonly" />');
+                                    MostrarCrono();
+                                </script>
+                            </div>
+                        </div></td></tr> 
+                        <tr><td><div id="aciertos">
+                            <h3>Aciertos</h3>
                             <script type="text/javascript">
-                                crearSetPregunta();
-//                                document.write(getPregunta());
-                                document.write('</h4><input type="button" class="boton" id="btn1" onClick="validarRespuesta(0)"/>');
-                                document.write('</h4><input type="button" class="boton" id="btn2" onClick="validarRespuesta(1)"/>');
-                                document.write('</h4><input type="button" class="boton" id="btn3" onClick="validarRespuesta(2)"/>');
-                                document.write('</h4><input type="button" class="boton" id="btn4" onClick="validarRespuesta(3)"/>');
-                                $("#btn1").keypress(function(event) {
-                                    if (event.which == 13 ) {
-                                        event.preventDefault();
-                                    }
-                                    if(event.which == 49){
-                                        document.getElementById("btn1").click();
-                                    }
-                                    if(event.which == 50){
-                                        document.getElementById("btn2").click();
-                                    }
-                                    if(event.which == 51){
-                                        document.getElementById("btn3").click();
-                                    }
-                                    if(event.which == 52){
-                                        document.getElementById("btn4").click();
-                                    }
-                                });
-                                setearNumerosEnteros();
-                     </script>
+                                var puntaje="0";
+                                document.write('<input type="text" id="textoAciertos" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
+                            </script>
+                        </div></td></tr>
+                        <tr><td><div id="desaciertos">
+                            <h3>Desaciertos</h3>
+                            <script type="text/javascript">
+                            var puntaje="0";
+                            document.write('<input type="text" id="textoDesaciertos" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
+                            </script>
+                        </div></td></tr>
+                        <tr><td><div id="nivel">
+                            <h3>Nivel</h3>
+                            <script type="text/javascript">
+                            var nivel=" Krilin ";
+                            /*Hace falta asignarle un valor a la variable nivel!!! */
+                            document.write('<input type="text" id="textoNivel" size="4" class="nivel" value="' + nivel + '" readonly="readonly" />');
+                            </script>
+                        </div></td></tr>
+                        <tr><td><input type="button" class="boton" id="botonAyuda" role="form" value="Ayuda"
+                        onClick=" window.location.href='../../Principal/html/PaginaPrincipal.html' "></td></tr>
+                        <tr><td><input type="button" class="boton" id="botonSalir" role="form" value="Salir"
+                        onClick=" window.location.href='../../index.html' "></td></tr>
+                    </table>
                 </form>
-            </div>
-   
-            <section id="informacion">
-                <h3>Información</h3>
-                <form id="tiempo">
-                    <h5>Tiempo</h5>
-                    <div id="reloj">
-                        <script type="text/javascript">
-                            document.write('<input type="text" id="time" size="4" class="time" value="" readonly="readonly" />');
-                            MostrarCrono();
-                        </script>
-                    </div>
-                </form> 
-                <form id="ayuda">
-                    <h5>Puntaje</h5>
-                    <script type="text/javascript">
-                    var puntaje="0";
-                    document.write('<input type="text" id="correctas" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
-                    document.write('<input type="text" id="erroneas" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
-                    document.write('<br><input type="text" id="preguntaContador" size="4" class="puntaje" value="' + puntaje + '" readonly="readonly" />');
-                    </script>
-                </form>
-            </section>
+            </div>   
             
-        </article>
-        
+            <footer>
+                <div id="pieDePagina">pie de página</div>
+            </footer>
+        </div>
     </body>
-    <footer>
-        <div id="pieDePagina">pie de página</div>
-    </footer>
+
 </html>

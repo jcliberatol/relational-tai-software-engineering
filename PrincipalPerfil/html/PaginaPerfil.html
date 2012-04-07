@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>PáginaPerfil</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <!-- Combo-handled YUI CSS files: reset,base,font,grids --> 
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.9.0/build/reset-fonts-grids/reset-fonts-grids.css&2.9.0/build/base/base-min.css"> 
+        
+        <!-- diseño css "LoginDesign.css"-->   
+        <link rel="stylesheet" href="../css/DiseñoPaginaPerfil.css" type="text/css" 
+              media="screen">
+        
+        <!-- archivo javaScrit -->   
+        <script type="text/javascript" src="../js/PaginaPrincipal.js"></script>
+        
+        <!--Libreria modernizr utilizada en el documento css-->
+        <script src="../../Complementos/modernizr.2.5.3.js"></script> 
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript">
+                $(function() {
+                if ($.browser.msie && $.browser.version.substr(0,1)<7)
+                {
+                        $('li').has('ul').mouseover(function(){
+                                $(this).children('ul').show();
+                                }).mouseout(function(){
+                                $(this).children('ul').hide();
+                                })
+                }
+                });
+        </script>
+    </head>
+    
+    <body>
+        <div id="cuerpo">
+            <header>
+                <div id="logo">
+                    <div id="imagenLogo"></div>
+                </div>
+                <figure id="cuadroTitulo"> 
+                    <h1>TUTOR ADAPTATIVO INTELIGENTE</h1>
+                </figure>
+            </header>
+        
+            <nav>
+                    <ul id="menu">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Ayuda</a>
+                             <ul>
+                                 <li>
+                                    <a href="#">Enteros</a>
+                                    <ul>
+                                       <li><a href="#">Suma</a></li>
+                                       <li><a href="#">Resta</a></li>
+                                       <li><a href="#">Multiplicación</a></li>
+                                       <li><a href="#">División</a></li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <a href="#">Fraccionarios</a>
+                                    <ul>
+                                       <li><a href="#">Suma</a></li>
+                                       <li><a href="#">Resta</a></li>
+                                       <li><a href="#">Multiplicación</a></li>
+                                       <li><a href="#">División</a></li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <a href="#">Decimales</a>
+                                    <ul>
+                                        <li><a href="#">Suma</a></li>
+                                        <li><a href="#">Resta</a></li>
+                                        <li><a href="#">Multiplicación</a></li>
+                                        <li><a href="#">División</a></li>
+                                    </ul>
+                                 </li>
+                             </ul>
+                        </li>
+                        <li><a href="#">Perfil</a></li>
+                    </ul>
+                </nav>
+                    <div id="contenedorColumnas">
+                        <table>
+                            <tr id="nombreUsuario"><td><h2>JAIMITO</h2></td></tr>
+                            <tr>
+                                <td>
+                                    <div id="ranking">                            
+                                        <table>
+                                            <tr><td><h3>RANKING</h3></td></tr>
+                                            <tr><td>
+                                                <table id="tablaRanking">
+                                                    <tr><td><p>Módulo</p></td><td><p>Puntaje</p></td></tr>
+                                                    <tr><td><p>Enteros</p></td><td><p>34pts</p></td></tr>
+                                                    <tr><td><p>Fraccionarios</p></td><td><p>36pts</p></td></tr>
+                                                    <tr><td><p>Decimales</p></td><td><p>14pts</p></td></tr>
+                                                </table>
+                                            </td></tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="nivelActual">
+                                        <table>
+                                            <tr><td><h3>NIVEL ACTUAL</h3></td></tr>
+                                            <tr><td><p>Supersayayin lo que sea!</p></td></tr>
+                                            <tr><td><img id="imagenNivel" src="../imagenes/ardilla.jpg" /></td></tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr><td><input type="submit" class="boton" id="btnSalir" value="Salir"/></td></tr>
+                        </table>
+            </div>
+            
+            <footer>
+                <div id="pieDePagina">pie de pagina</div>
+            </footer>
+        </div>
+    </body>
+</html>
